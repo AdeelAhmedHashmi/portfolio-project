@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+body,
+html {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+@utility btn {
+  @apply px-10 border-2 rounded-lg;
+}
+
+@utility input {
+  @apply transition-transform bg-base-300 border-none placeholder:opacity-60 focus:outline-none focus:border-none;
+}
+@utility select {
+  @apply transition-transform bg-base-300 border-none focus:outline-none focus:border-none;
+}
+
+@utility input-xl {
+  @apply m-4 mx-5 px-8 py-9 rounded-xl w-130;
+}
+@utility select-xl {
+  @apply m-4 px-10 py-5 h-19 rounded-2xl w-130;
+}
+@utility btn-border {
+  @apply border-neutral-400;
+}
+
+@plugin "daisyui/theme" {
+  name: "portfolio-dark";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+
+  /* Background and base colors */
+  --color-base-100: oklch(10% 0 0); /* Almost black */
+  --color-base-200: oklch(15% 0 0); /* Slightly lighter black */
+  --color-base-300: oklch(20% 0 0); /* Even lighter black */
+  --color-base-content: oklch(95% 0.01 0); /* White/light gray text */
+
+  /* Primary color (orange) */
+  --color-primary: oklch(70% 0.18 45); /* Orange */
+  --color-primary-content: oklch(95% 0.01 0); /* White text on orange */
+
+  /* Secondary color (optional) */
+  --color-secondary: oklch(50% 0.05 0); /* Gray */
+  --color-secondary-content: oklch(95% 0.01 0); /* White text on gray */
+
+  /* Neutral colors (for borders, dividers) */
+  --color-neutral: oklch(30% 0.01 0); /* Dark gray */
+  --color-neutral-content: oklch(95% 0.01 0); /* White text on neutral */
+
+  /* Info, success, warning, error (optional) */
+  --color-info: oklch(60% 0.1 240); /* Blue */
+  --color-success: oklch(60% 0.1 150); /* Green */
+  --color-warning: oklch(70% 0.18 45); /* Orange (same as primary) */
+  --color-error: oklch(60% 0.15 20); /* Red */
+
+  /* Border radius */
+  --radius-box: 0.5rem;
+  --radius-btn: 0.5rem;
+  --radius-badge: 1rem;
+
+  /* Border width */
+  --border: 1px;
+
+  /* Shadow (optional) */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
