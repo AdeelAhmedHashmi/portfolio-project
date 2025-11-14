@@ -13,9 +13,10 @@ const App = () => {
   const fetchBio = useCallback(async () => {
     try {
       setIsloading(true);
-      const res = await fetch("https://akhlasahmed.online/resumedata");
-      const data = (await res.json()) as BioDataResponse;
-      setBio(data);
+      // const res = await fetch("https://akhlasahmed.online/resumedata");
+      // const data = (await res.json()) as BioDataResponse;
+      // setBio(data);
+      throw new Error();
       setIsloading(false);
     } catch (error) {
       console.error("Failed to fetch bio data, using local data.", error);
@@ -35,8 +36,10 @@ const App = () => {
   return (
     <>
       <BioDataContext value={bio}>
-        <Header />
-        <Outlet />
+        <div className="w-full max-w-[1500px] m-auto">
+          <Header />
+          <Outlet />
+        </div>
       </BioDataContext>
     </>
   );

@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useContext } from "react";
 import type { BioDataResponse } from "../type";
 import BioDataContext from "../context/bioContext";
+import SkillsSection from "./SkillsSection";
 
 const AboutMe = () => {
   // Custom wrapper function to replace motion.div for compilation stability
@@ -20,11 +21,12 @@ const AboutMe = () => {
   return (
     <div
       id="about"
-      className={`mx-auto px-4 py-16 sm:px-8 md:px-12 lg:px-16 pt-20 font-sans bg-[#00000022] backdrop-blur-3xl`}
+      className={`mx-auto px-4 py-16 sm:px-8 md:px-12 lg:px-16 z-20 pt-20 font-sans`}
+      // className={`mx-auto px-4 py-16 sm:px-8 md:px-12 lg:px-16 pt-20 font-sans`}
     >
       {/* Header Section */}
       <div className="flex flex-col gap-4 text-center mb-16">
-        <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold">
+        <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-heading">
           About Me
         </h3>
         <p
@@ -80,6 +82,7 @@ const AboutMe = () => {
           </div>
         </div>
       </div>
+      <SkillsSection />
     </div>
   );
 };

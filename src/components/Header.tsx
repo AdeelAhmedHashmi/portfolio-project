@@ -3,11 +3,15 @@ import Navigation from "./Navigation";
 import { RiMenu2Fill } from "react-icons/ri";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
+import ScrollAtTop from "./ScrollAtTop";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
-    <div className="px-4 w-screen lg:pt-14 pt-9 sm:px-8 md:px-16 lg:px-24 xl:px-23 font-sans">
+    <div
+      id="header"
+      className="px-4 w-full lg:pt-14 pt-9 sm:px-8 md:px-16 lg:px-24 xl:px-23"
+    >
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -33,6 +37,8 @@ const Header = () => {
         )}
       </AnimatePresence>
 
+      <ScrollAtTop />
+
       <div className="flex justify-between align-middle">
         <div
           className="lg:hidden flex align-middle"
@@ -41,7 +47,9 @@ const Header = () => {
           <RiMenu2Fill className="text-4xl text-neutral-500" />
         </div>
         <div className="h-full flex align-middle">
-          <h2 className="text-4xl font-semibold text-primary">Akhlas.</h2>
+          <h2 className="text-4xl font-semibold text-primary font-heading">
+            Akhlas.
+          </h2>
         </div>
         <div className="hidden lg:block">
           <ul className="flex *:hover:text-primary font-semibold cursor-pointer gap-x-15 text-xl text-nowrap translate-y-1">

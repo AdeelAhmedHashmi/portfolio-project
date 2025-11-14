@@ -5,7 +5,6 @@ import AboutMe from "../components/AboutMe";
 // import Portfolio from "../components/Portfolio";
 import ContactMe from "../components/ContactMe";
 import Footer from "../components/Footer";
-import SkillsSection from "../components/SkillsSection";
 import { Portfolio } from "../components/Portfolio";
 
 export const Route = createFileRoute("/")({
@@ -15,11 +14,10 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
   return (
     <>
-      <div>
+      <div className="bg-[#00000022] backdrop-blur-3xl">
         <HeroSection />
         <Services />
         <AboutMe />
-        <SkillsSection />
         <Portfolio />
         <ContactMe />
         <Footer />

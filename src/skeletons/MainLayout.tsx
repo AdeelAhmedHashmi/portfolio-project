@@ -1,24 +1,24 @@
-const ShimmerBlock = ({ className = "h-4 rounded" }) => (
+const ShimmerBlock = ({ className = "h-4 rounded-3xl" }) => (
   <div className={`animate-pulse bg-gray-700 ${className}`}></div>
 );
 const MainLayout = () => {
   return (
-    <div className="min-h-screen bg-gray-900 font-sans">
+    <div className="min-h-screen bg-neutral-900">
       {/* 1. HEADER / NAVBAR SHIMMER */}
       <header className="navbar container mx-auto px-4 sm:px-8 py-4">
         {/* Logo (Left) */}
         <div className="navbar-start">
-          <ShimmerBlock className="w-20 h-6" />
+          <ShimmerBlock className="w-27 rounded-2xl h-9" />
         </div>
 
         {/* Navigation Links (Center) - Desktop only */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-6">
-            <ShimmerBlock className="w-16 h-4" />
-            <ShimmerBlock className="w-20 h-4" />
-            <ShimmerBlock className="w-24 h-4" />
-            <ShimmerBlock className="w-20 h-4" />
-            <ShimmerBlock className="w-28 h-4" />
+            <ShimmerBlock className="w-16 h-4 rounded-3xl" />
+            <ShimmerBlock className="w-20 h-4 rounded-3xl" />
+            <ShimmerBlock className="w-24 h-4 rounded-3xl" />
+            <ShimmerBlock className="w-20 h-4 rounded-3xl" />
+            <ShimmerBlock className="w-28 h-4 rounded-3xl" />
           </ul>
         </div>
 
@@ -29,7 +29,7 @@ const MainLayout = () => {
       </header>
 
       {/* 2. HERO SECTION SHIMMER */}
-      <section className="container mx-auto px-4 sm:px-8 pt-16 pb-24">
+      <section className="container mx-auto px-4 lg:mt-20 sm:px-8 pt-16 pb-24">
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
           {/* Shimmer Left Column (Text, CTAs, Stats) */}
           <div className="lg:w-1/2 w-full order-2 lg:order-1 text-center lg:text-left space-y-4">
@@ -37,17 +37,17 @@ const MainLayout = () => {
             <ShimmerBlock className="h-6 w-32 mx-auto lg:mx-0" />
 
             {/* Name Shimmer */}
-            <ShimmerBlock className="h-10 w-3/4 mx-auto lg:mx-0" />
+            <ShimmerBlock className="h-10 w-1/2 mx-auto lg:mx-0" />
 
             {/* Title Shimmer */}
-            <ShimmerBlock className="h-10 w-2/3 mx-auto lg:mx-0" />
+            <ShimmerBlock className="h-18 w-3/4 mx-auto lg:mx-0 mt-8" />
 
             {/* Social Icons Placeholder */}
             <div className="flex justify-center lg:justify-start space-x-5 mb-8 pt-4">
-              <ShimmerBlock className="size-6 rounded-full" />
-              <ShimmerBlock className="size-6 rounded-full" />
-              <ShimmerBlock className="size-6 rounded-full" />
-              <ShimmerBlock className="size-6 rounded-full" />
+              <ShimmerBlock className="size-11 rounded-full" />
+              <ShimmerBlock className="size-11 rounded-full" />
+              <ShimmerBlock className="size-11 rounded-full" />
+              <ShimmerBlock className="size-11 rounded-full" />
             </div>
 
             {/* CTA Buttons Placeholder */}
@@ -82,7 +82,7 @@ const MainLayout = () => {
       </section>
 
       {/* 3. SERVICES SECTION SHIMMER */}
-      <section className="bg-gray-800 py-20">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-8">
           {/* Section Header Shimmer */}
           <div className="text-center mb-16 space-y-3">
@@ -97,7 +97,7 @@ const MainLayout = () => {
             {[1, 2, 3].map((id) => (
               <div
                 key={id}
-                className="bg-gray-900 p-8 rounded-lg shadow-xl border-t-4 border-gray-700"
+                className="bg-gray-800 p-8 rounded-lg shadow-xl border-t-"
               >
                 {/* Icon Placeholder */}
                 <ShimmerBlock className="size-10 rounded-full mx-auto md:mx-0 mb-6" />

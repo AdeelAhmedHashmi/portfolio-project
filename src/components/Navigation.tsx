@@ -7,7 +7,14 @@ const Navigation = () => {
   }
   return (
     <>
-      <li className="text-primary">Home</li>
+      <li
+        className="text-primary"
+        onClick={() =>
+          scrollToTarget(document.getElementById("services") as HTMLElement)
+        }
+      >
+        Home
+      </li>
       <li
         className="hover:text-primary transition-colors"
         onClick={() =>

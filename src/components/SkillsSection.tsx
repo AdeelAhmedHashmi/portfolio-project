@@ -23,10 +23,7 @@ const SkillsSection = () => {
     })) || [];
 
   return (
-    <div
-      // FIX: Replaced custom px-23 pt-30 with standard, responsive padding
-      className={`bg-[#00000022] flex justify-between backdrop-blur-3xl mx-auto py-16 px-4 sm:px-8`}
-    >
+    <div className={`flex justify-between mx-auto mt-10 py-16 px-4 sm:px-8`}>
       <SkillsProgress skills={skills} />
     </div>
   );

@@ -17,12 +17,10 @@ const Services = () => {
   return (
     <div
       id="services"
-      // FIX: Used max-w-7xl mx-auto to center content and prevent horizontal overflow
-      // FIX: Removed non-standard xl:px-23
-      className="px-4 py-12 sm:px-8 md:px-16 lg:px-24 xl:px-23 pt-20 font-sans"
+      className="px-4 pb-12 pt-7 sm:px-8 md:px-16 z-0 lg:px-24 xl:px-23"
     >
       <div className="flex flex-col gap-6">
-        <h3 className="text-center text-4xl sm:text-5xl font-semibold">
+        <h3 className="text-center text-4xl sm:text-5xl font-semibold font-heading">
           Services
         </h3>
         <p className="text-lg sm:text-xl opacity-70 text-center max-w-2xl mx-auto">

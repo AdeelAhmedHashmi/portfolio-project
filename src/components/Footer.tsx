@@ -13,7 +13,7 @@ const Footer = () => {
     <div className="px-23 pb-7 py-14 bg-base-300 mt-50 text-neutral-400">
       <div className="flex flex-col gap-15">
         {/* logo  */}
-        <h3 className="text-4xl font-semibold text-primary text-center">
+        <h3 className="text-4xl font-semibold text-primary text-center font-heading">
           Akhlas.
         </h3>
 
