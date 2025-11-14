@@ -139,7 +139,7 @@ const RadialProgress = ({ value, icon }: RadialProgressProps) => {
 
 const SkillsProgress = ({ skills }: SkillsProgressProps) => {
   return (
-    <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 gap-x-8 text-center p-5">
+    <div className="w-full grid grid-cols-2 grid-cols-auto-fit md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7 gap-y-12 gap-x-8 text-center p-5">
       {skills.map((skill) => {
         return (
           <div key={skill.name} className="flex flex-col items-center">

@@ -2,14 +2,19 @@ import SocialLinks from "./SocialLinks";
 import { MdOutlineLocalPhone } from "react-icons/md";
 import { HiOutlineMail } from "react-icons/hi";
 import Navigation from "./Navigation";
+import type { BioDataResponse } from "../type";
+import BioDataContext from "../context/bioContext";
+import { useContext } from "react";
 
 const Footer = () => {
+  const data = useContext<BioDataResponse | null>(BioDataContext);
+
   return (
     <div className="px-23 pb-7 py-14 bg-base-300 mt-50 text-neutral-400">
       <div className="flex flex-col gap-15">
         {/* logo  */}
         <h3 className="text-4xl font-semibold text-primary text-center">
-          LOGO
+          Akhlas.
         </h3>
 
         {/* navigations  */}
@@ -29,12 +34,14 @@ const Footer = () => {
           <div className="flex gap-4 align-middle justify-center">
             <HiOutlineMail className="text-3xl" />
             <span className="font-semibold text-xl">
-              akhlasahmed.ah@gmail.com
+              {data?.contactInfo.email}
             </span>
           </div>
           <div className="flex gap-4 align-middle justify-center">
             <MdOutlineLocalPhone className="text-3xl" />
-            <span className="font-semibold text-xl">+92 345 345 623</span>
+            <span className="font-semibold text-xl">
+              {data?.contactInfo.phone}
+            </span>
           </div>
         </div>
       </div>

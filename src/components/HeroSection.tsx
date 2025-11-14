@@ -25,9 +25,9 @@ const HeroSection = () => {
       >
         {/* Content Section (Col 1) */}
         <div className="h-full relative text-center lg:text-start">
-          {/* Div for Only Effect (Translated bg-primary to BG_COLOR_ACCENT) */}
+          {/* Div for Only Effect  */}
           <div
-            className={`h-4/5 w-full bg-primary rounded-full opacity-10 left-0 -translate-x-1/2 absolute blur-3xl`}
+            className={`h-4/5 w-full bg-primary rounded-full opacity-3 left-0 -translate-x-1/2 absolute blur-3xl`}
             style={{ zIndex: -1 }}
           ></div>
 
@@ -38,7 +38,7 @@ const HeroSection = () => {
               Hi I am
             </h3>
             <h2 className="text-3xl sm:text-4xl font-semibold opacity-90">
-              Akhlas Ahmed
+              {data?.personalInfo.name || "Akhlas Ahmed"}
             </h2>
           </div>
 
@@ -46,11 +46,11 @@ const HeroSection = () => {
           <div className="py-6 sm:py-10">
             <h1
               className={`
-              text-6xl sm:text-6xl md:text-7xl lg:text-8xl 
-              font-bold text-primary leading-tight xl:text-nowrap
+              text-6xl sm:text-6xl md:text-7xl lg:text-7xl font-sans
+              font-bold text-primary leading-tight xl:text-nowrap gradient-text
             `}
             >
-              Flutter Developer
+              {data?.personalInfo.title || "Flutter Developer"}
             </h1>
           </div>
 
@@ -80,19 +80,25 @@ const HeroSection = () => {
             "
             >
               <div className="flex flex-col items-center gap-1 p-2">
-                <h4 className={`text-2xl sm:text-3xl text-primary`}>5+</h4>
+                <h4 className={`text-2xl sm:text-3xl text-primary`}>
+                  {data?.personalInfo.experience}
+                </h4>
                 <p>Experience</p>
               </div>
               {/* Divider (border opacity-50) */}
               <div className="border-r border-white/20 my-2"></div>
               <div className="flex flex-col items-center gap-1 p-2">
-                <h4 className={`text-2xl sm:text-3xl text-primary`}>20+</h4>
+                <h4 className={`text-2xl sm:text-3xl text-primary`}>
+                  {data?.personalInfo.projectsCompleted}
+                </h4>
                 <p>Project done</p>
               </div>
               {/* Divider (border opacity-50) */}
               <div className="border-r border-white/20 my-2 hidden sm:block"></div>
               <div className="flex flex-col items-center gap-1 p-2">
-                <h4 className={`text-2xl sm:text-3xl text-primary`}>80+</h4>
+                <h4 className={`text-2xl sm:text-3xl text-primary`}>
+                  {data?.personalInfo.happyClients}
+                </h4>
                 <p>Happy Clients</p>
               </div>
             </div>
@@ -104,7 +110,7 @@ const HeroSection = () => {
           <figure className="w-full max-w-xl flex justify-center aspect-4/5 object-cover">
             <img
               className="w-full h-full object-cover rounded-3xl"
-              src={profile}
+              src={data?.personalInfo.profileImage || profile}
               alt="profile photo"
               onError={(e) => {
                 e.currentTarget.src =

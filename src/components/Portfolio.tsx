@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { motion } from "motion/react";
+import BioDataContext from "../context/bioContext";
+import type { BioDataResponse } from "../type";
 
 const MOCK_IMAGES = [
   "https://placehold.co/800x600/10b981/ffffff?text=Project+View+1",
@@ -165,6 +167,7 @@ const ProjectCard: React.FC<CardProps> = ({
 
 const PortfolioSec = () => {
   const [currentCatagory, setCurrentCategory] = useState<string>("All");
+  const data = useContext<BioDataResponse | null>(BioDataContext);
 
   function setCatagory(catagory: string) {
     if (!catagory) {
@@ -173,18 +176,7 @@ const PortfolioSec = () => {
     setCurrentCategory(catagory);
   }
 
-  const projectData = [
-    { name: "Skyline Commerce", cat: "Website Design", images: MOCK_IMAGES },
-    { name: "Nova Mobile App", cat: "Mobile App Design", images: MOCK_IMAGES },
-    { name: "Aura Desktop Tool", cat: "App Desktop", images: MOCK_IMAGES },
-    { name: "Hair Style Catalog", cat: "Braiding", images: MOCK_IMAGES },
-    { name: "Cloud API Portal", cat: "Website Design", images: MOCK_IMAGES },
-    { name: "Finance Dashboard", cat: "Braiding", images: MOCK_IMAGES },
-    { name: "Finance Dashboard", cat: "App Desktop", images: MOCK_IMAGES },
-    { name: "Finance Dashboard", cat: "Braiding", images: MOCK_IMAGES },
-  ];
-
-  const catagories = new Set(projectData.map((project) => project.cat));
+  // const catagories = new Set(projectData.map((project) => project.cat));
 
   return (
     <div
@@ -212,18 +204,22 @@ const PortfolioSec = () => {
           >
             All
           </button>
-          {[...catagories].map((category) => (
-            <button
-              key={category}
-              className={`
+          {data?.portfolio.categories.map((category) => {
+            return (
+              category !== "All" && (
+                <button
+                  key={category}
+                  className={`
                 px-7 py-2 lg:py-4 rounded-lg text-base font-medium 
                 ${category === currentCatagory ? "bg-primary" : "bg-base-300"} transition-colors 
                 hover:bg-primary cursor-pointer
-              `}
-            >
-              {category}
-            </button>
-          ))}
+                `}
+                >
+                  {category}
+                </button>
+              )
+            );
+          })}
         </div>
       </div>
 
@@ -237,25 +233,25 @@ const PortfolioSec = () => {
       "
       >
         {currentCatagory === "All" &&
-          projectData.map((project, i) => {
+          data?.portfolio.projects.map((project, i) => {
             return (
               <ProjectCard
                 key={i}
-                category={project.cat}
-                projectImages={project.images}
-                projectName={project.name}
+                category={project.category}
+                projectImages={MOCK_IMAGES}
+                projectName={project.title}
               />
             );
           })}
 
-        {projectData
-          .filter((project) => project.cat === currentCatagory)
+        {data?.portfolio.projects
+          .filter((project) => project.category === currentCatagory)
           .map((project, i) => {
             return (
               <ProjectCard
                 key={i}
-                projectImages={project.images}
-                projectName={project.name}
+                projectImages={MOCK_IMAGES}
+                projectName={project.title}
               />
             );
           })}

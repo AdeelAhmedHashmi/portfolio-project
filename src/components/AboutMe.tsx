@@ -1,6 +1,9 @@
 import { IoMdDownload } from "react-icons/io";
 import profile from "../assets/profile-primary.png";
 import { motion } from "motion/react";
+import { useContext } from "react";
+import type { BioDataResponse } from "../type";
+import BioDataContext from "../context/bioContext";
 
 const AboutMe = () => {
   // Custom wrapper function to replace motion.div for compilation stability
@@ -11,6 +14,8 @@ const AboutMe = () => {
     children: React.ReactNode;
     className: string;
   }) => <div className={className}>{children}</div>;
+
+  const data = useContext<BioDataResponse | null>(BioDataContext);
 
   return (
     <div
@@ -23,9 +28,9 @@ const AboutMe = () => {
           About Me
         </h3>
         <p
-          className={`text-lg md:text-xl opacity-70 text-neutral-400 max-w-2xl mx-auto`}
+          className={`text-lg md:text-xl opacity-70 text-neutral-400 max-w-7xl mx-auto`}
         >
-          User Interface and User Experience and Also Video Editing
+          {data?.about.description}
         </p>
       </div>
 
@@ -56,26 +61,7 @@ const AboutMe = () => {
             viewport={{ once: true }}
             className={`space-y-6 text-lg p-2 lg:text-xl text-center lg:text-start text-neutral-400 leading-relaxed`}
           >
-            <p>
-              A software engineer, the modern-day architect of digital realms,
-              navigates the ethereal landscapes of code, sculpting intangible
-              structures that shape our technological world. With fingers poised
-              over keyboards like virtuoso pianists, they compose symphonies of
-              logic, their minds a labyrinth of algorithms and solutions.
-            </p>
-            <p>
-              Their canvas is a screen, a vast expanse where lines of code dance
-              in intricate patterns, weaving the fabric of programs and
-              applications. Each keystroke is a brushstroke, crafting intricate
-              architectures and breathing life into innovative designs.
-            </p>
-            <p>
-              In this digital atelier, they don the mantle of problem solvers,
-              confronting bugs and glitches like valiant knights in an
-              ever-evolving quest for perfection. Debugging becomes a noble
-              pursuit, unraveling the mysteries hidden within the tangled webs
-              of code.
-            </p>
+            <p>{data?.about.description}</p>
           </motion.div>
 
           {/* Button Section */}

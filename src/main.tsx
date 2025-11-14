@@ -1,5 +1,8 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
+// Font imported for side effects; TypeScript may not have types for this package.
+// @ts-expect-error: missing type declarations for this side-effect import
+import "@fontsource-variable/space-grotesk";
 import "./index.css";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "daisyui";
 
 body,
 html {
@@ -7,6 +6,33 @@ html {
   min-width: 100vw;
 }
 
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/src/assets/fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+.gradient-text {
+  background: linear-gradient(to right, #ff7e338f, #ff7e14);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  -webkit-text-fill-color: transparent;
+}
+@plugin "daisyui";
+/* Configure Tailwind theme */
+@theme {
+  --font-family-sans: "Space Grotesk", sans-serif;
+}
+@layer base {
+  body {
+    font-family: var(--font-family-sans);
+  }
+}
 @utility btn {
   @apply px-10 border-2 rounded-lg;
 }

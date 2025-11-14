@@ -41,7 +41,7 @@ const Header = () => {
           <RiMenu2Fill className="text-4xl text-neutral-500" />
         </div>
         <div className="h-full flex align-middle">
-          <h2 className="text-4xl font-semibold text-primary">LOGO</h2>
+          <h2 className="text-4xl font-semibold text-primary">Akhlas.</h2>
         </div>
         <div className="hidden lg:block">
           <ul className="flex *:hover:text-primary font-semibold cursor-pointer gap-x-15 text-xl text-nowrap translate-y-1">
