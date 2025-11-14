@@ -164,7 +164,7 @@ const ProjectCard: React.FC<CardProps> = ({
 // --- 3. Portfolio Component (Refined) ---
 
 const PortfolioSec = () => {
-  const [currentCatagory, setCurrentCategory] = useState<string>("App Desktop");
+  const [currentCatagory, setCurrentCategory] = useState<string>("All");
 
   function setCatagory(catagory: string) {
     if (!catagory) {
@@ -241,6 +241,7 @@ const PortfolioSec = () => {
             return (
               <ProjectCard
                 key={i}
+                category={project.cat}
                 projectImages={project.images}
                 projectName={project.name}
               />

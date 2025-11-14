@@ -40,7 +40,7 @@ const HeroSection = () => {
             <h1
               className={`
               text-6xl sm:text-6xl md:text-7xl lg:text-8xl 
-              font-bold text-primary leading-tight
+              font-bold text-primary leading-tight xl:text-nowrap
             `}
             >
               Flutter Developer
