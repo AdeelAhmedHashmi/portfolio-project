@@ -66,7 +66,7 @@ const Services = () => {
       id="services"
       // FIX: Used max-w-7xl mx-auto to center content and prevent horizontal overflow
       // FIX: Removed non-standard xl:px-23
-      className="mx-auto px-4 lg:py-12 pb-10 sm:px-8 md:px-12 lg:px-16 lg:pt-20 font-sans "
+      className="px-4 py-12 sm:px-8 md:px-16 lg:px-24 xl:px-23 pt-20 font-sans"
     >
       <div className="flex flex-col gap-6">
         <h3 className="text-center text-4xl sm:text-5xl font-semibold">
@@ -79,7 +79,7 @@ const Services = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid mt-16 gap-y-12 gap-x-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid mt-16 gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((card, i) => {
           return (
             <Card

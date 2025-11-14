@@ -1,7 +1,14 @@
+// import { useContext } from "react";
 import profile from "../assets/profile-pic.png";
 import SocialLinks from "./SocialLinks";
+import type { BioDataResponse } from "../type";
+import BioDataContext from "../context/bioContext";
+import { useContext } from "react";
 
 const HeroSection = () => {
+  const data = useContext<BioDataResponse | null>(BioDataContext);
+
+  console.log(data);
   return (
     <div
       id="home"

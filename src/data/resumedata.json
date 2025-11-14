@@ -1,0 +1,98 @@
+{
+  "personalInfo": {
+    "name": "Akhlas Ahmed",
+    "title": "Flutter Developer",
+    "shortBio": "A passionate Flutter developer building high-performance cross-platform apps with elegant UI and clean architecture.",
+    "detailedBio": "I’m a results-driven Flutter developer with expertise in crafting seamless, high-quality applications for Android, iOS, and Web. My focus lies in writing clean, scalable code and delivering pixel-perfect user interfaces that provide outstanding performance. I have hands-on experience with advanced Flutter state management (Bloc, Provider, Riverpod), Firebase integration, API consumption, and CI/CD automation. I thrive in agile teams, constantly exploring new technologies to create impactful user experiences and efficient digital products.",
+    "profileImage": "path/to/profile.jpg",
+    "location": "Remote / Worldwide",
+    "experience": "4+ Years",
+    "projectsCompleted": "25+",
+    "happyClients": "50+",
+    "resumeLink": "/files/MahmoodFazile_Resume.pdf",
+    "socialLinks": [
+      { "platform": "GitHub", "url": "https://github.com/mahmood" },
+      { "platform": "LinkedIn", "url": "https://linkedin.com/in/mahmood" },
+      { "platform": "Twitter", "url": "https://twitter.com/mahmood" }
+    ]
+  },
+  "services": [
+    {
+      "title": "Cross-Platform App Development",
+      "description": "Building robust, beautiful apps for Android, iOS, and Web using Flutter and Dart.",
+      "icon": "smartphone"
+    },
+    {
+      "title": "UI Implementation",
+      "description": "Transforming design mockups into pixel-perfect responsive Flutter UIs.",
+      "icon": "brush"
+    },
+    {
+      "title": "API Integration",
+      "description": "Integrating REST and GraphQL APIs with secure, efficient data handling.",
+      "icon": "link"
+    },
+    {
+      "title": "App Optimization",
+      "description": "Improving app performance, reducing load time, and optimizing animations.",
+      "icon": "speedometer"
+    }
+  ],
+  "about": {
+    "headline": "Flutter Developer | Mobile App Engineer",
+    "description": "I’m a Flutter developer focused on creating seamless, performant, and visually appealing mobile applications. My expertise covers state management (Bloc, Provider, Riverpod), Firebase integration, and clean architecture principles. I’m passionate about solving complex problems with elegant, scalable code.",
+    "image": "path/to/about-photo.jpg"
+  },
+  "skills": [
+    { "name": "Flutter", "level": 100 },
+    { "name": "Dart", "level": 95 },
+    { "name": "Firebase", "level": 90 },
+    { "name": "REST / GraphQL APIs", "level": 85 },
+    { "name": "Bloc / Provider / Riverpod", "level": 80 },
+    { "name": "UI/UX Implementation", "level": 90 },
+    { "name": "Git & CI/CD", "level": 75 }
+  ],
+  "portfolio": {
+    "categories": [
+      "All",
+      "Mobile Apps",
+      "Web Apps",
+      "UI Components",
+      "Open Source"
+    ],
+    "projects": [
+      {
+        "title": "Foodie Hub",
+        "category": "Mobile Apps",
+        "image": "path/to/foodiehub.jpg",
+        "description": "A complete food delivery app built with Flutter & Firebase featuring live order tracking and Stripe payments.",
+        "link": "https://github.com/mahmood/foodiehub"
+      },
+      {
+        "title": "Taskly Pro",
+        "category": "Mobile Apps",
+        "image": "path/to/tasklypro.jpg",
+        "description": "A productivity app with offline sync, calendar view, and custom notifications using local database and Bloc.",
+        "link": "https://github.com/mahmood/tasklypro"
+      },
+      {
+        "title": "Portfolio Web App",
+        "category": "Web Apps",
+        "image": "path/to/portfolio.jpg",
+        "description": "Personal portfolio built entirely with Flutter Web, featuring dynamic JSON-driven content.",
+        "link": "https://mahmood.dev"
+      },
+      {
+        "title": "Flutter Widgets Kit",
+        "category": "Open Source",
+        "image": "path/to/widgets.jpg",
+        "description": "A reusable UI components library for Flutter developers, published on pub.dev.",
+        "link": "https://github.com/mahmood/flutter-widgets-kit"
+      }
+    ]
+  },
+  "contactInfo": {
+    "email": "mahmood.fazile7905@gmail.com",
+    "phone": "+195 729 107 005"
+  }
+}
