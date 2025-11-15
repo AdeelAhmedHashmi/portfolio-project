@@ -37,7 +37,6 @@
 }
 
 @plugin "daisyui";
-/* Configure Tailwind theme */
 @theme {
   --font-heading: "Space Grotesk", sans-serif;
 }
@@ -71,6 +70,9 @@
 }
 @utility btn-border {
   @apply border-neutral-400;
+}
+@utility wrapper {
+  @apply px-4 sm:px-8 md:px-16 z-0 lg:px-24 xl:px-23;
 }
 
 @plugin "daisyui/theme" {

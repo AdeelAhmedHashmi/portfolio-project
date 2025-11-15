@@ -4,6 +4,7 @@ import BioDataContext from "../context/bioContext";
 import type { BioDataResponse } from "../type";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import Main from "./Wrappers/Main";
 
 const MOCK_IMAGES = [
   "https://placehold.co/800x600/10b981/ffffff?text=Project+View+1",
@@ -390,10 +391,7 @@ const PortfolioSec = () => {
   }
 
   return (
-    <div
-      id="portfolio"
-      className="z-20 px-4 py-12 sm:px-8 md:px-16 lg:px-24 xl:px-23 pt-20 backdrop-blur-3xl"
-    >
+    <Main id="portfolio" className="z-20 py-12 pt-20 backdrop-blur-3xl">
       {/* Title Header and Category Filters */}
       <div className="mb-10">
         <h3 className="text-center text-4xl sm:text-5xl font-semibold mb-8 font-heading">
@@ -474,7 +472,7 @@ const PortfolioSec = () => {
           );
         })}
       </div>
-    </div>
+    </Main>
   );
 };
 

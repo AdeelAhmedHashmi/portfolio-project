@@ -5,12 +5,13 @@ import Navigation from "./Navigation";
 import type { BioDataResponse } from "../type";
 import BioDataContext from "../context/bioContext";
 import { useContext } from "react";
+import Main from "./Wrappers/Main";
 
 const Footer = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
 
   return (
-    <div className="px-23 pb-7 py-14 bg-base-300 mt-50 text-neutral-400">
+    <Main className="pb-7 py-14 bg-base-300 mt-50 text-neutral-400">
       <div className="flex flex-col gap-15">
         {/* logo  */}
         <h3 className="text-4xl font-semibold text-primary text-center font-heading">
@@ -45,7 +46,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Main>
   );
 };
 

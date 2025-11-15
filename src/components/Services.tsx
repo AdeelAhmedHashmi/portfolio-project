@@ -2,8 +2,9 @@ import Card from "./Cards/Card";
 import { useContext } from "react";
 import type { BioDataResponse } from "../type";
 import BioDataContext from "../context/bioContext";
-import useIcons from "../data/icons";
+import useIcons from "../hooks/useIcons";
 import useFindIcon from "../hooks/useFindIcon";
+import Main from "./Wrappers/Main";
 
 const Services = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
@@ -15,10 +16,7 @@ const Services = () => {
   );
 
   return (
-    <div
-      id="services"
-      className="px-4 pb-12 pt-7 sm:px-8 md:px-16 z-0 lg:px-24 xl:px-23"
-    >
+    <Main id="services" className="pb-12 pt-7 z-0">
       <div className="flex flex-col gap-6">
         <h3 className="text-center text-4xl sm:text-5xl font-semibold font-heading">
           Services
@@ -42,7 +40,7 @@ const Services = () => {
           );
         })}
       </div>
-    </div>
+    </Main>
   );
 };
 

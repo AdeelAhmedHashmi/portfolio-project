@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from "motion/react";
 import React from "react";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 
@@ -27,25 +26,15 @@ const ScrollAtTop = () => {
         setIsUp(!isUp);
       }}
     >
-      <AnimatePresence>
-        {isUp ? (
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0 }}
-          >
-            <IoIosArrowUp className="scale-200" />
-          </motion.div>
-        ) : (
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0 }}
-          >
-            <IoIosArrowDown className="scale-200" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isUp ? (
+        <div>
+          <IoIosArrowUp className="scale-200" />
+        </div>
+      ) : (
+        <div>
+          <IoIosArrowDown className="scale-200" />
+        </div>
+      )}
     </div>
   );
 };

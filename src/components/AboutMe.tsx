@@ -5,6 +5,7 @@ import { useContext } from "react";
 import type { BioDataResponse } from "../type";
 import BioDataContext from "../context/bioContext";
 import SkillsSection from "./SkillsSection";
+import Main from "./Wrappers/Main";
 
 const AboutMe = () => {
   // Custom wrapper function to replace motion.div for compilation stability
@@ -19,9 +20,9 @@ const AboutMe = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
 
   return (
-    <div
+    <Main
       id="about"
-      className={`mx-auto px-4 py-16 sm:px-8 md:px-12 lg:px-16 z-20 pt-20 font-sans`}
+      className={`mx-auto py-16 z-20 pt-20 font-sans`}
       // className={`mx-auto px-4 py-16 sm:px-8 md:px-12 lg:px-16 pt-20 font-sans`}
     >
       {/* Header Section */}
@@ -32,7 +33,7 @@ const AboutMe = () => {
         <p
           className={`text-lg md:text-xl opacity-70 text-neutral-400 max-w-7xl mx-auto`}
         >
-          {data?.about.description}
+          {data?.about.headline}
         </p>
       </div>
 
@@ -83,7 +84,7 @@ const AboutMe = () => {
         </div>
       </div>
       <SkillsSection />
-    </div>
+    </Main>
   );
 };
 export default AboutMe;

@@ -2,8 +2,8 @@ import SocialLinks from "./SocialLinks";
 import type { BioDataResponse } from "../type";
 import BioDataContext from "../context/bioContext";
 import { useContext } from "react";
-import { motion } from "motion/react";
 import profileImg from "../assets/profile-image.png";
+import Main from "./Wrappers/Main";
 
 const HeroSection = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
@@ -12,23 +12,19 @@ const HeroSection = () => {
   return (
     <div
       id="home"
-      className={`relative my-20 bg-[#00000022] backdrop-blur-3xl`}
+      className={`w-full relative my-20  bg-[#00000022] backdrop-blur-3xl`}
     >
       {/* Central Content Wrapper */}
-      <div
+      <Main
         className="
-        w-full px-4 pt-12 sm:px-8 md:px-16 lg:px-24 xl:px-23
+        w-full pt-12
         grid grid-cols-1 lg:grid-cols-2 
         gap-12 lg:gap-20 
         items-center
       "
       >
         {/* Content Section (Col 1) */}
-        <motion.div
-          initial={{ opacity: 0, x: -50, scale: 0.9 }}
-          whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          className="h-full relative grow text-center lg:text-start"
-        >
+        <div className="h-full relative grow text-center lg:text-start">
           {/* Div for Only Effect  */}
           <div
             className={`h-4/5 w-full bg-primary rounded-full opacity-4 blur-3xl fixed -translate-y-23 left-0 -translate-x-1/2`}
@@ -106,15 +102,10 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Profile Image Section (Col 2) */}
-        <motion.div
-          initial={{ opacity: 0, x: 50, scale: 0.9 }}
-          whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ delay: 0.8 }}
-          className="flex justify-center lg:justify-end py-12 lg:py-0 -translate-y-19"
-        >
+        <div className="flex justify-center lg:justify-end py-12 lg:py-0 -translate-y-19">
           <figure className="w-full max-w-xl flex justify-center aspect-4/5 object-cover">
             <img
               className="w-full h-full object-cover rounded-3xl"
@@ -125,8 +116,8 @@ const HeroSection = () => {
               }}
             />
           </figure>
-        </motion.div>
-      </div>
+        </div>
+      </Main>
     </div>
   );
 };
