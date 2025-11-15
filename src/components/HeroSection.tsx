@@ -1,9 +1,9 @@
-import profile from "../assets/profile-pic.png";
 import SocialLinks from "./SocialLinks";
 import type { BioDataResponse } from "../type";
 import BioDataContext from "../context/bioContext";
 import { useContext } from "react";
 import { motion } from "motion/react";
+import profileImg from "../assets/profile-image.png";
 
 const HeroSection = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
@@ -14,7 +14,7 @@ const HeroSection = () => {
       id="home"
       className={`relative my-20 bg-[#00000022] backdrop-blur-3xl`}
     >
-      {/* Central Content Wrapper (Prevents w-screen overflow) */}
+      {/* Central Content Wrapper */}
       <div
         className="
         w-full px-4 pt-12 sm:px-8 md:px-16 lg:px-24 xl:px-23
@@ -118,11 +118,10 @@ const HeroSection = () => {
           <figure className="w-full max-w-xl flex justify-center aspect-4/5 object-cover">
             <img
               className="w-full h-full object-cover rounded-3xl"
-              src={data?.personalInfo.profileImage || profile}
+              src={data?.personalInfo.profileImage || profileImg}
               alt="profile photo"
               onError={(e) => {
-                e.currentTarget.src =
-                  "https://placehold.co/400x500/1C1917/A8A29E?text=PROFILE+IMAGE";
+                e.currentTarget.src = profileImg;
               }}
             />
           </figure>

@@ -29,7 +29,7 @@ const Header = () => {
             </div>
             <ul
               onClick={() => setIsOpen(false)}
-              className="flex h-full flex-col justify-center w-screen *:text-xl *:p-1 *:hover:bg-primary gap-4 align-middle text-center "
+              className="flex h-full flex-col justify-center *:text-xl *:p-1 *:hover:bg-primary gap-4 align-middle text-center grow"
             >
               <Navigation />
             </ul>

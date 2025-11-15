@@ -48,6 +48,7 @@
 @layer base {
   body {
     font-family: var(--font-general);
+    overflow-x: hidden;
   }
 }
 

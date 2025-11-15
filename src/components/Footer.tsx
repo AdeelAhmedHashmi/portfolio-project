@@ -33,13 +33,13 @@ const Footer = () => {
         <div className="flex flex-wrap justify-center gap-y-4 gap-x-10">
           <div className="flex gap-4 align-middle justify-center">
             <HiOutlineMail className="text-3xl" />
-            <span className="font-semibold text-xl">
+            <span className="font-semibold text-lg lg:text-xl">
               {data?.contactInfo.email}
             </span>
           </div>
           <div className="flex gap-4 align-middle justify-center">
             <MdOutlineLocalPhone className="text-3xl" />
-            <span className="font-semibold text-xl">
+            <span className="font-semibold text-lg text-nowrap lg:text-xl">
               {data?.contactInfo.phone}
             </span>
           </div>
