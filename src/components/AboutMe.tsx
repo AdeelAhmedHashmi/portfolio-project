@@ -41,7 +41,7 @@ const AboutMe = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* Image Section (Col 1) */}
         <div className="flex justify-center shrink-0 grow w-full">
-          <div className="relative w-full max-w-lg aspect-4/5 rounded-xl shadow-2xl">
+          <div className="relative w-full max-w-lg aspect-4/5 rounded-xl">
             <MotionDiv className="size-full rounded-full overflow-hidden">
               <img
                 src={profile}

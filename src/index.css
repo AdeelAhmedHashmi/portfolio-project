@@ -45,10 +45,21 @@
   --font-general: "Inter", sans-serif;
 }
 @layer base {
+  html {
+    height: 100%;
+  }
+
   body {
+    height: 100%;
     font-family: var(--font-general);
     overflow-x: hidden;
+    background-color: #121212;
+    backdrop-filter: blur(120px);
   }
+}
+
+.light-font {
+  font-weight: 300;
 }
 
 @utility btn {
@@ -61,7 +72,6 @@
 @utility select {
   @apply transition-transform bg-base-300 border-none focus:outline-none focus:border-none;
 }
-
 @utility input-xl {
   @apply m-4 mx-5 px-8 py-9 rounded-xl w-130;
 }

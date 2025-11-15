@@ -3,7 +3,6 @@ import Navigation from "./Navigation";
 import { RiMenu2Fill } from "react-icons/ri";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
-import ScrollAtTop from "./ScrollAtTop";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -36,8 +35,6 @@ const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <ScrollAtTop />
 
       <div className="flex justify-between align-middle">
         <div

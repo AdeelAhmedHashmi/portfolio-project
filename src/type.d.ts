@@ -62,3 +62,8 @@ export interface ContactInfo {
   email: string;
   phone: string;
 }
+
+export interface popupSettings {
+  isOpen: boolean;
+  data: Project | null;
+}

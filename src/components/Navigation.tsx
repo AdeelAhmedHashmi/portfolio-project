@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
     <>
       <li
-        className="text-primary"
+        className="text-primary light-font"
         onClick={() =>
           scrollToTarget(document.getElementById("services") as HTMLElement)
         }
@@ -16,7 +16,7 @@ const Navigation = () => {
         Home
       </li>
       <li
-        className="hover:text-primary transition-colors"
+        className="hover:text-primary transition-colors light-font text-neutral-400"
         onClick={() =>
           scrollToTarget(document.getElementById("services") as HTMLElement)
         }
@@ -24,7 +24,7 @@ const Navigation = () => {
         Services
       </li>
       <li
-        className="hover:text-primary transition-colors"
+        className="hover:text-primary transition-colors light-font text-neutral-400"
         onClick={() =>
           scrollToTarget(document.getElementById("about") as HTMLElement)
         }
@@ -32,7 +32,7 @@ const Navigation = () => {
         About Me
       </li>
       <li
-        className="hover:text-primary transition-colors"
+        className="hover:text-primary transition-colors light-font text-neutral-400"
         onClick={() =>
           scrollToTarget(document.getElementById("portfolio") as HTMLElement)
         }
@@ -40,7 +40,7 @@ const Navigation = () => {
         Portfolio
       </li>
       <li
-        className="hover:text-primary transition-colors"
+        className="hover:text-primary transition-colors light-font text-neutral-400"
         onClick={() =>
           scrollToTarget(document.getElementById("contact") as HTMLElement)
         }

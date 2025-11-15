@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import HeroSection from "../components/HeroSection";
 import Services from "../components/Services";
 import AboutMe from "../components/AboutMe";
-// import Portfolio from "../components/Portfolio";
 import ContactMe from "../components/ContactMe";
 import Footer from "../components/Footer";
 import { Portfolio } from "../components/Portfolio";
@@ -14,7 +13,7 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
   return (
     <>
-      <div className="bg-[#00000022] backdrop-blur-3xl">
+      <div>
         <HeroSection />
         <Services />
         <AboutMe />

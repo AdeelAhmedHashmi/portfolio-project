@@ -1,7 +1,11 @@
 import { motion } from "motion/react";
-import type { FormEvent } from "react";
+import { useContext, type FormEvent } from "react";
+import type { BioDataResponse } from "../type";
+import BioDataContext from "../context/bioContext";
 const ContactMe = () => {
-  const serviceOfInterest = ["Designing", "Editing", "Development"];
+  const data = useContext<BioDataResponse | null>(BioDataContext);
+
+  const serviceOfInterest = data?.services.map((service) => service.title);
 
   // Standard input/select styles combined with focus states
   const baseInputClasses = `
@@ -32,7 +36,7 @@ const ContactMe = () => {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
       id="contact"
-      className={`max-w-7xl mx-auto px-4 py-16 sm:px-8 md:px-12 lg:px-16 pt-20 bg-[#00000022] backdrop-blur-3xl`}
+      className={`max-w-7xl mx-auto px-4 py-16 sm:px-8 md:px-12 lg:px-16 pt-20`}
     >
       {/* Header Section */}
       <div className="flex flex-col gap-4 text-center mb-16">
@@ -78,7 +82,7 @@ const ContactMe = () => {
               className={`${baseInputClasses} h-auto appearance-none`}
             >
               <option disabled={true}>Services of interest</option>
-              {serviceOfInterest.map((service) => (
+              {serviceOfInterest?.map((service) => (
                 <option key={service} className=" border-none p-4">
                   {service}
                 </option>

@@ -8,13 +8,10 @@ import Main from "./Wrappers/Main";
 const HeroSection = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
 
-  console.log(data);
   return (
-    <div
-      id="home"
-      className={`w-full relative my-20  bg-[#00000022] backdrop-blur-3xl`}
-    >
+    <div id="home" className={`w-full relative my-20 backdrop-blur-3xl`}>
       {/* Central Content Wrapper */}
+
       <Main
         className="
         w-full pt-12
@@ -33,7 +30,7 @@ const HeroSection = () => {
 
           {/* Name/Title Block */}
           <div className="flex flex-col gap-2 font-heading">
-            <h3 className="text-xl sm:text-2xl font-semibold opacity-70">
+            <h3 className="text-2xl sm:text-2xl font-semibold opacity-70">
               Hi I am
             </h3>
             <h2 className="text-3xl sm:text-4xl font-semibold opacity-90">
@@ -46,7 +43,7 @@ const HeroSection = () => {
             <h1
               className={`
               text-6xl sm:text-6xl md:text-7xl lg:text-7xl font-heading
-              font-bold text-primary leading-tight gradient-text
+              font-semibold text-primary leading-tight gradient-text
             `}
             >
               {data?.personalInfo.title || "Flutter Developer"}
@@ -61,11 +58,11 @@ const HeroSection = () => {
           {/* Actions Buttons (Translated custom button classes) */}
           <div className="flex gap-4 sm:gap-6 py-8 justify-center lg:justify-start">
             <button
-              className={`px-6 py-3 rounded-xl font-bold bg-primary transition-opacity hover:opacity-80 cursor-pointer`}
+              className={`px-9 py-3 rounded-xl font-bold bg-primary transition-opacity hover:opacity-80 cursor-pointer`}
             >
               Hire Me
             </button>
-            <button className="px-6 py-3 cursor-pointer rounded-xl font-bold border-2 border-white/30 transition-opacity hover:opacity-80">
+            <button className="px-9 py-3 cursor-pointer rounded-xl font-bold border-2 border-neutral-400 text-neutral-400 transition-opacity hover:opacity-80">
               Download CV
             </button>
           </div>
@@ -82,7 +79,7 @@ const HeroSection = () => {
                 <h4 className={`text-2xl sm:text-3xl text-primary`}>
                   {data?.personalInfo.experience}
                 </h4>
-                <p>Experience</p>
+                <p className="font-normal">Experience</p>
               </div>
               {/* Divider (border opacity-50) */}
               <div className="border-r border-white/20 my-2"></div>
@@ -90,7 +87,7 @@ const HeroSection = () => {
                 <h4 className={`text-2xl sm:text-3xl text-primary`}>
                   {data?.personalInfo.projectsCompleted}
                 </h4>
-                <p>Project done</p>
+                <p className="font-normal">Project done</p>
               </div>
               {/* Divider (border opacity-50) */}
               <div className="border-r border-white/20 my-2 hidden sm:block"></div>
@@ -98,7 +95,7 @@ const HeroSection = () => {
                 <h4 className={`text-2xl sm:text-3xl text-primary`}>
                   {data?.personalInfo.happyClients}
                 </h4>
-                <p>Happy Clients</p>
+                <p className="font-normal">Happy Clients</p>
               </div>
             </div>
           </div>
@@ -106,16 +103,16 @@ const HeroSection = () => {
 
         {/* Profile Image Section (Col 2) */}
         <div className="flex justify-center lg:justify-end py-12 lg:py-0 -translate-y-19">
-          <figure className="w-full max-w-xl flex justify-center aspect-4/5 object-cover">
+          <div className="w-full max-w-xl -scale-x-110 flex justify-center aspect-3/4">
             <img
-              className="w-full h-full object-cover rounded-3xl"
+              className="rounded-3xl lg:scale-100 scale-90"
               src={data?.personalInfo.profileImage || profileImg}
               alt="profile photo"
               onError={(e) => {
                 e.currentTarget.src = profileImg;
               }}
             />
-          </figure>
+          </div>
         </div>
       </Main>
     </div>
