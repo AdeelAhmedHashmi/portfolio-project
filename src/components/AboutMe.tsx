@@ -27,11 +27,11 @@ const AboutMe = () => {
     >
       {/* Header Section */}
       <div className="flex flex-col gap-4 text-center mb-16">
-        <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-heading">
+        <h3 className="responsive-heading font-semibold font-heading">
           About Me
         </h3>
         <p
-          className={`text-lg md:text-xl opacity-70 text-neutral-400 max-w-7xl mx-auto`}
+          className={`responsive-paragraph opacity-70 text-neutral-400 max-w-7xl mx-auto`}
         >
           {data?.about.headline}
         </p>
@@ -62,7 +62,7 @@ const AboutMe = () => {
             initial={{ height: 0, opacity: 0 }}
             whileInView={{ height: "auto", opacity: 1 }}
             viewport={{ once: true }}
-            className={`space-y-6 text-lg p-2 lg:text-xl text-center lg:text-start text-neutral-400 leading-relaxed`}
+            className={`responsive-paragraph px-2 lg:px-0 scale-105 md:scale-100 space-y-6 text-center lg:text-start text-neutral-400 leading-relaxed`}
           >
             <p>{data?.about.description}</p>
           </motion.div>
@@ -71,8 +71,8 @@ const AboutMe = () => {
           <div className="pt-8 flex justify-center lg:justify-start">
             <button
               className={`
-              px-6 py-3 rounded-xl font-bold text-lg 
-              bg-primary 
+               rounded-xl font-bold 
+              bg-primary responsive-btn text-md
               flex items-center gap-2 transition-opacity hover:opacity-70
               shadow-lg shadow-orange-500/30
             `}

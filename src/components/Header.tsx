@@ -18,17 +18,17 @@ const Header = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "-100%", opacity: 0 }}
             transition={{ type: "tween" }}
-            className="absolute bg-[#000000d] backdrop-blur-3xl left-0 top-0 z-50 py-6"
+            className="absolute bg-[#000000d] w-screen backdrop-blur-3xl left-0 top-0 z-50 py-6"
           >
             <div
-              className="absolute inset-6 text-2xl h-2 w-2"
+              className="text-2xl px-3 cursor-pointer"
               onClick={() => setIsOpen(false)}
             >
               <RxCross1 />
             </div>
             <ul
               onClick={() => setIsOpen(false)}
-              className="flex h-full flex-col justify-center *:text-xl *:p-1 *:hover:bg-primary gap-4 align-middle text-center grow"
+              className="flex h-full flex-col justify-center *:text-xl *:p-1 *:hover:bg-primary *:hover:cursor-pointer *:hover:text-white gap-4 align-middle text-center grow"
             >
               <Navigation />
             </ul>
@@ -54,7 +54,7 @@ const Header = () => {
           </ul>
         </div>
         <div>
-          <button className="btn btn-primary text-nowrap lg:px-10 p-3 text-lg">
+          <button className="btn btn-primary responsive-btn px-4 md:px-6 text-nowrap">
             Hire Me
           </button>
         </div>

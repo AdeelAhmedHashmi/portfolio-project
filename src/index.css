@@ -30,6 +30,58 @@
   scrollbar-width: none;
 }
 
+@utility responsive-heading {
+  @apply text-3xl md:text-4xl lg:text-5xl;
+}
+
+@utility responsive-paragraph {
+  @apply text-sm md:text-lg lg:text-xl;
+}
+
+@utility responsive-card-icons {
+  @apply text-4xl md:text-5xl lg:text-6xl;
+}
+
+@utility responsive-card-title {
+  @apply text-lg md:text-2xl lg:text-3xl;
+}
+
+@utility responsive-card-pad {
+  @apply px-2 py-6 md:px-4 md:py-6 lg:p-8;
+}
+
+@utility responsive-card-layout {
+  @apply gap-2 md:gap-4 lg:gap-6;
+}
+
+@utility responsive-btn {
+  @apply px-5 py-2 lg:px-6 lg:py-3 lg:text-lg cursor-pointer;
+}
+
+@utility responsive-progressbar {
+  @apply size-28 md:size-30 lg:size-32;
+}
+
+@utility responsive-progress-value {
+  @apply text-2xl lg:text-3xl;
+}
+
+@utility responsive-progress-heading {
+  @apply text-lg lg:text-xl;
+}
+
+@utility responsive-input {
+  @apply py-2 px-3 placeholder:text-sm text-sm lg:p-4 lg:placeholder:text-lg lg:text-lg;
+}
+
+@utility responsive-projectcard-text {
+  @apply text-lg md:text-xl;
+}
+
+@utility responsive-experience-box {
+  @apply text-sm md:text-xl lg:text-2xl;
+}
+
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
   width: 0px;
@@ -69,18 +121,23 @@
 @utility input {
   @apply transition-transform bg-base-300 border-none placeholder:opacity-60 focus:outline-none focus:border-none;
 }
+
 @utility select {
   @apply transition-transform bg-base-300 border-none focus:outline-none focus:border-none;
 }
+
 @utility input-xl {
   @apply m-4 mx-5 px-8 py-9 rounded-xl w-130;
 }
+
 @utility select-xl {
   @apply m-4 px-10 py-5 h-19 rounded-2xl w-130;
 }
+
 @utility btn-border {
   @apply border-neutral-400;
 }
+
 @utility wrapper {
   @apply px-4 sm:px-8 md:px-16 z-0 lg:px-24 xl:px-23;
 }

@@ -9,15 +9,15 @@ const ContactMe = () => {
 
   // Standard input/select styles combined with focus states
   const baseInputClasses = `
-    w-full p-4 rounded-xl border border-neutral-800 bg-base-300 
-    placeholder-neutral-500 focus:outline-none 
+    w-full rounded-xl border border-neutral-800 bg-base-300 
+    placeholder-neutral-500 focus:outline-none
     focus:ring-2 focus:ring-primary focus:border-primary 
-    transition-colors text-lg
+    transition-colors text-lg responsive-input
   `;
 
   // Adjusted button classes to match the 'btn-outline hover:bg-primary btn-border' style
   const buttonClasses = `
-    px-8 py-7 rounded-xl font-bold text-lg 
+    rounded-xl font-bold responsive-btn  
     border-2 border-neutral-500 cursor-pointer
     transition-colors hover:bg-primary
     hover:border-transparent opacity-85
@@ -40,11 +40,11 @@ const ContactMe = () => {
     >
       {/* Header Section */}
       <div className="flex flex-col gap-4 text-center mb-16">
-        <h3 className="text-4xl sm:text-5xl font-bold font-heading">
+        <h3 className="responsive-heading font-bold font-heading">
           Contact Me
         </h3>
         <p
-          className={`text-xl sm:text-2xl opacity-70 text-neutral-400 max-w-2xl mx-auto`}
+          className={`responsive-paragraph opacity-70 text-neutral-400 max-w-2xl mx-auto`}
         >
           Cultivating Connections: Reach Out and Connect with Me
         </p>
@@ -79,7 +79,7 @@ const ContactMe = () => {
             {/* Services of interest (Select) */}
             <select
               defaultValue="Services of interest"
-              className={`${baseInputClasses} h-auto appearance-none`}
+              className={`${baseInputClasses} text-sm lg:text-lg text-neutral-500 h-auto appearance-none`}
             >
               <option disabled={true}>Services of interest</option>
               {serviceOfInterest?.map((service) => (

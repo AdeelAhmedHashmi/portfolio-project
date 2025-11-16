@@ -13,21 +13,25 @@ const Card = ({ title, icon, description }: CardProps) => {
       initial={{ opacity: 0, y: -6 }}
       whileInView={{ opacity: 1, y: 0 }}
       className={`
-        w-full max-w-xl grow mx-auto p-8 rounded-3xl
-        bg-base-300
+        w-full max-w-xl grow mx-auto rounded-3xl
+        bg-base-300 responsive-card-pad
         cursor-pointer transition-transform hover:scale-[1.03] 
         shadow-lg  hover:shadow-[#4242428f]
       `}
     >
-      <div className="items-center flex flex-col gap-6 text-center">
+      <div className="items-center flex flex-col responsive-card-layout text-center">
         {/* Icon */}
-        <div className={`text-6xl text-primary`}>{icon}</div>
+        <div className={`responsive-card-icons text-primary`}>{icon}</div>
 
         {/* Title */}
-        <h2 className={`text-3xl font-semibold text-primary`}>{title}</h2>
+        <h2 className={`responsive-card-title font-semibold text-primary`}>
+          {title}
+        </h2>
 
         {/* Description */}
-        <p className={`text-xl opacity-70 pt-3 text-neutral-500`}>
+        <p
+          className={`responsive-paragraph opacity-70 md:pt-3 text-neutral-500`}
+        >
           {description}
         </p>
       </div>

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import BioDataContext from "../context/bioContext";
 import type { BioDataResponse, Project } from "../type";
 import CardCarousel from "./Cards/CardCarousel";
@@ -10,6 +10,7 @@ import b from "../assets/projects/1.png";
 import c from "../assets/projects/2.png";
 import d from "../assets/projects/3.png";
 import ProjectDetails from "./PopUps/ProjectDetails";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const MOCK_IMAGES = [a, b, c, d];
 
@@ -53,9 +54,13 @@ const ProjectCard: React.FC<CardProps> = ({
         items-center justify-between text-neutral-500
       "
       >
-        <div className="text-xl font-bold text-neutral-500">{projectName}</div>
+        <div className="responsive-projectcard-text font-bold text-neutral-400">
+          {projectName}
+        </div>
         {category && (
-          <div className="text-lg font-bold text-neutral-600">{category}</div>
+          <div className="responsive-projectcard-text scale-95 font-bold text-neutral-500">
+            {category}
+          </div>
         )}
       </div>
     </motion.div>
@@ -94,26 +99,20 @@ const PortfolioSec = () => {
   return (
     <Main id="portfolio" className="z-20 py-12 pt-20">
       {/* Project Details Popup is here  */}
-      <AnimatePresence>
-        {isPopupOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <ProjectDetails
-              target={scrollingTarget}
-              data={selectedProject}
-              isOpen={isPopupOpen}
-              close={setIsPopupOpen}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isPopupOpen && (
+        <div>
+          <ProjectDetails
+            target={scrollingTarget}
+            data={selectedProject}
+            isOpen={isPopupOpen}
+            close={setIsPopupOpen}
+          />
+        </div>
+      )}
 
       {/* Title Header and Category Filters */}
       <div className="mb-10">
-        <h3 className="text-center text-4xl sm:text-5xl font-semibold mb-8 font-heading">
+        <h3 className="text-center responsive-heading font-semibold mb-8 font-heading">
           Portfolio
         </h3>
         <div
@@ -125,7 +124,7 @@ const PortfolioSec = () => {
         >
           <button
             className={`
-            px-6 py-2 rounded-lg lg:py-4 text-base font-medium 
+            rounded-lg font-medium responsive-btn
             ${currentCatagory === "All" ? "bg-primary" : "bg-base-300"} shadow-md transition-colors 
             hover:bg-primary cursor-pointer
           `}
@@ -212,7 +211,13 @@ const PortfolioSec = () => {
           }}
           className="my-6"
         >
-          {canShowMore ? "Show More" : projects.length < 0 ? "" : "Show less"}
+          {canShowMore ? (
+            <IoIosArrowDown className="cursor-pointer text-2xl lg:text-3xl" />
+          ) : projects.length < 0 ? (
+            ""
+          ) : (
+            <IoIosArrowUp className="cursor-pointer text-2xl lg:text-3xl" />
+          )}
         </button>
       </div>
     </Main>

@@ -9,7 +9,7 @@ const HeroSection = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
 
   return (
-    <div id="home" className={`w-full relative my-20 backdrop-blur-3xl`}>
+    <div id="home" className={`w-full relative mt-20 backdrop-blur-3xl`}>
       {/* Central Content Wrapper */}
 
       <Main
@@ -58,11 +58,11 @@ const HeroSection = () => {
           {/* Actions Buttons (Translated custom button classes) */}
           <div className="flex gap-4 sm:gap-6 py-8 justify-center lg:justify-start">
             <button
-              className={`px-9 py-3 rounded-xl font-bold bg-primary transition-opacity hover:opacity-80 cursor-pointer`}
+              className={`responsive-btn px-8 rounded-xl font-bold bg-primary transition-opacity hover:opacity-80 cursor-pointer`}
             >
               Hire Me
             </button>
-            <button className="px-9 py-3 cursor-pointer rounded-xl font-bold border-2 border-neutral-400 text-neutral-400 transition-opacity hover:opacity-80">
+            <button className="responsive-btn px-8 cursor-pointer rounded-xl font-bold border-2 border-neutral-400 text-neutral-400 transition-opacity hover:opacity-80">
               Download CV
             </button>
           </div>
@@ -75,24 +75,24 @@ const HeroSection = () => {
               text-lg sm:text-xl font-semibold justify-around
             "
             >
-              <div className="flex flex-col items-center gap-1 p-2">
-                <h4 className={`text-2xl sm:text-3xl text-primary`}>
+              <div className="flex flex-col items-center gap-1 p-2 responsive-experience-box">
+                <h4 className={`text-primary`}>
                   {data?.personalInfo.experience}
                 </h4>
                 <p className="font-normal">Experience</p>
               </div>
               {/* Divider (border opacity-50) */}
               <div className="border-r border-white/20 my-2"></div>
-              <div className="flex flex-col items-center gap-1 p-2">
-                <h4 className={`text-2xl sm:text-3xl text-primary`}>
+              <div className="flex flex-col items-center gap-1 p-2 responsive-experience-box">
+                <h4 className={`text-primary`}>
                   {data?.personalInfo.projectsCompleted}
                 </h4>
                 <p className="font-normal">Project done</p>
               </div>
               {/* Divider (border opacity-50) */}
-              <div className="border-r border-white/20 my-2 hidden sm:block"></div>
-              <div className="flex flex-col items-center gap-1 p-2">
-                <h4 className={`text-2xl sm:text-3xl text-primary`}>
+              <div className="border-r border-white/20 my-2"></div>
+              <div className="flex flex-col items-center gap-1 p-2 responsive-experience-box">
+                <h4 className={`text-primary`}>
                   {data?.personalInfo.happyClients}
                 </h4>
                 <p className="font-normal">Happy Clients</p>

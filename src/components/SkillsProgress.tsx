@@ -99,7 +99,7 @@ const RadialProgress = ({ value, icon }: RadialProgressProps) => {
   return (
     <div ref={ref} className="relative inline-flex items-center justify-center">
       <svg
-        className="w-32 h-32 transform -rotate-90"
+        className="responsive-progressbar transform -rotate-90"
         viewBox={`0 0 ${SIZE} ${SIZE}`}
       >
         {/* Background Trace */}
@@ -148,10 +148,14 @@ const SkillsProgress = ({ skills }: SkillsProgressProps) => {
             </div>
 
             <div>
-              <h3 className={`text-3xl mt-4 mb-2 text-primary font-bold`}>
+              <h3
+                className={`responsive-progress-value mt-4 mb-2 text-primary font-bold`}
+              >
                 {skill.value}%
               </h3>
-              <p className={`font-semibold text-xl text-neutral-400`}>
+              <p
+                className={`responsive-progress-heading font-semibold text-neutral-400`}
+              >
                 {skill.name}
               </p>
             </div>

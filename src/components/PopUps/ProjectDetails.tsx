@@ -7,6 +7,7 @@ import a from "../../assets/projects/a.jpg";
 import b from "../../assets/projects/b.jpg";
 import c from "../../assets/projects/2.png";
 import d from "../../assets/projects/1.png";
+import { motion } from "motion/react";
 
 interface ProjectDetailsProps {
   data: Project | null;
@@ -29,7 +30,7 @@ const ProjectDetails = ({
   function releaseFreeze() {
     close(false);
     window.document.body.style.overflow = "auto";
-    target?.scrollIntoView({ behavior: "smooth" });
+    target?.scrollIntoView({ behavior: "instant" });
   }
   return (
     <div
@@ -41,7 +42,11 @@ const ProjectDetails = ({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Scrollable Content Wrapper */}
-        <div className="overflow-y-auto max-h-[90vh]">
+        <motion.div
+          initial={{ opacity: 0.5 }}
+          animate={{ opacity: 1 }}
+          className="overflow-y-auto max-h-[90vh]"
+        >
           {/* Header with Close Button - Now STICKY relative to its scrollable parent */}
           <div className="sticky top-0 bg-base-300 p-6 flex justify-between items-center z-10">
             <h2 className="text-3xl font-extrabold font-heading">
@@ -71,7 +76,7 @@ const ProjectDetails = ({
             </div>
 
             {/* Link Button */}
-            <div className="mt-8 pt-4 border-t">
+            <div className="mt-8 pt-4">
               <a
                 href={data.link}
                 target="_blank"
@@ -83,7 +88,7 @@ const ProjectDetails = ({
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
