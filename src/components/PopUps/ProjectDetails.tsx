@@ -49,7 +49,7 @@ const ProjectDetails = ({
         >
           {/* Header with Close Button - Now STICKY relative to its scrollable parent */}
           <div className="sticky top-0 bg-base-300 p-6 flex justify-between items-center z-10">
-            <h2 className="text-3xl font-extrabold font-heading">
+            <h2 className="responsive-heading lg:text-3xl font-extrabold font-heading">
               {data.title}
             </h2>
             <button
@@ -70,7 +70,7 @@ const ProjectDetails = ({
 
             {/* Description */}
             <div className="mb-6">
-              <p className="text-lg text-neutral-500 leading-relaxed">
+              <p className="reaponsive-paragraph text-neutral-500 leading-relaxed">
                 {data.description}
               </p>
             </div>
@@ -81,7 +81,7 @@ const ProjectDetails = ({
                 href={data.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-md text-white bg-primary hover:bg-primary/75 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                className="responsive-btn inline-flex items-center justify-center w-full lg:py-2 sm:w-auto border border-transparent text-base font-medium rounded-lg shadow-md text-white bg-primary hover:bg-primary/75 focus:outline-none focus:ring-2 focus:ring-offset-2"
               >
                 View Live Project / Source
                 <FaLink className="ml-2" size={18} />

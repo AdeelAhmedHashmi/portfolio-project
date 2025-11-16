@@ -104,6 +104,7 @@ const CardCarousel: React.FC<CarouselProps> = ({ items }) => {
         onError={(e) => {
           e.currentTarget.src = fallbackImageUrl;
         }}
+        loading="lazy"
       />
 
       {/* --- PREV / NEXT BUTTONS --- */}

@@ -111,6 +111,7 @@ const HeroSection = () => {
               onError={(e) => {
                 e.currentTarget.src = profileImg;
               }}
+              loading="lazy"
             />
           </div>
         </div>

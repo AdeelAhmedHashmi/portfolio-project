@@ -51,6 +51,7 @@ const AboutMe = () => {
                   e.currentTarget.src =
                     "https://placehold.co/500x700/1C1917/A8A29E?text=PROFILE+IMAGE";
                 }}
+                loading="lazy"
               />
             </MotionDiv>
           </div>

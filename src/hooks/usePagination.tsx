@@ -1,21 +1,6 @@
 import { useState, useMemo } from "react";
 import type { Project } from "../type";
 
-// Define a generic type T for the items in the data array
-
-/**
- * A custom hook for client-side pagination.
- * * @template T The type of the items in the data array (e.g., Project).
- * @param {T[]} data The full array of items to paginate.
- * @param {number} initialItemsPerPage The initial number of items to show.
- * @param {number} [incrementBy=initialItemsPerPage] The number of items to add on 'show more'.
- * @returns {{
- * itemsForShow: T[],
- * showMore: () => void,
- * canShowMore: boolean
- * }}
- */
-
 const usePagination = <T extends Project | undefined>(
   data: T[],
   initialItemsPerPage: number,
@@ -36,7 +21,10 @@ const usePagination = <T extends Project | undefined>(
     return data.slice(0, endIndex);
   }, [data, itemsToShow]);
 
-  const canShowMore: boolean = itemsToShow < data.length;
+  // Use useMemo to derive canShowMore from itemsToShow and data.length
+  const canShowMore: boolean = useMemo<boolean>(() => {
+    return itemsToShow < data.length;
+  }, [itemsToShow, data.length]);
 
   return {
     itemsForShow,
