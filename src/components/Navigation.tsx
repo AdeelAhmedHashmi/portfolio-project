@@ -10,7 +10,7 @@ const Navigation = () => {
       <li
         className="text-primary light-font"
         onClick={() =>
-          scrollToTarget(document.getElementById("services") as HTMLElement)
+          scrollToTarget(document.getElementById("home") as HTMLElement)
         }
       >
         Home

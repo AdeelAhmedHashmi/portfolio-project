@@ -20,12 +20,14 @@ interface CardProps {
   projectImages: Array<string>;
   projectName: string;
   category?: string;
+  className?: string;
 }
 
 const ProjectCard: React.FC<CardProps> = ({
   projectImages,
   projectName,
   category = undefined,
+  className = "",
 }) => {
   return (
     <motion.div
@@ -35,13 +37,13 @@ const ProjectCard: React.FC<CardProps> = ({
         y: 0,
       }}
       viewport={{ once: true, amount: 0.3 }}
-      className="
-        bg-base-300 text-primary-content relative w-full h-[400px] cursor-pointer 
-        rounded-xl 
+      className={`
+        min-w-80 bg-base-300 text-primary-content relative w-full h-[400px] cursor-pointer 
+        rounded-xl ${className}
         shadow-xl overflow-hidden 
         transition-all duration-300
         hover:shadow-2xl hover:scale-[1.01]
-      "
+      `}
     >
       <figure className="w-full h-80 object-cover">
         <CardCarousel items={projectImages} />
@@ -169,6 +171,7 @@ const PortfolioSec = () => {
               }}
             >
               <ProjectCard
+                className={`${i === 0 ? "relative left-0" : ""}`}
                 category={project.category}
                 projectImages={MOCK_IMAGES}
                 projectName={project.title}
@@ -196,9 +199,13 @@ const PortfolioSec = () => {
             className="my-6"
           >
             {canShowMore ? (
-              <IoIosArrowDown className="cursor-pointer text-2xl lg:text-3xl" />
+              <>
+                <IoIosArrowDown className="cursor-pointer text-2xl lg:text-3xl" />
+              </>
             ) : (
-              <IoIosArrowUp className="cursor-pointer text-2xl lg:text-3xl" />
+              <>
+                <IoIosArrowUp className="cursor-pointer text-2xl lg:text-3xl" />
+              </>
             )}
           </button>
         </div>

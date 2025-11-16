@@ -28,7 +28,7 @@ const Services = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid mt-16 gap-8 grid-cols-2 lg:grid-cols-3">
+      <div className="grid mt-16 gap-4 md:gap-6 lg:gap-8 grid-cols-1 lg:grid-cols-3">
         {data?.services.map((service, i) => {
           return (
             <Card

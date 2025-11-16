@@ -108,7 +108,8 @@ const ContactMe = () => {
 
           {/* Submit Button */}
           <div className="pt-4 flex justify-end">
-            <button type="submit" className={buttonClasses}>
+            <button type="submit" className={buttonClasses + "lg:py-6"}>
+              <div className="size-4 rounded-full border border-b-2 animate-spin"></div>
               Send Message
             </button>
           </div>
