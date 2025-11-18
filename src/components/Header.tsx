@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div
       id="header"
-      className="px-4 w-full lg:pt-14 pt-9 sm:px-8 md:px-16 lg:px-24 xl:px-23"
+      className="px-4 w-full lg:mt-18 mt-13 sm:px-8 md:px-16 lg:px-24 xl:px-23"
     >
       <AnimatePresence>
         {isOpen && (

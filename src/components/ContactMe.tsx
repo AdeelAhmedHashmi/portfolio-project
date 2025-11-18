@@ -14,19 +14,17 @@ const ContactMe = () => {
 
   // Standard input/select styles combined with focus states
   const baseInputClasses = `
-    w-full rounded-xl border border-neutral-800 bg-base-300 
-    placeholder-neutral-500 focus:outline-none
-    focus:ring-2 focus:ring-primary focus:border-primary 
+    w-full rounded-xl border border-base-300/10 bg-base-300 
+    placeholder-primary-content/30 focus:outline-none
     transition-colors text-lg responsive-input
   `;
 
   // Adjusted button classes to match the 'btn-outline hover:bg-primary btn-border' style
   const buttonClasses = `
-    rounded-xl font-bold responsive-btn  
-    border-2 border-neutral-500 cursor-pointer
-    transition-colors hover:bg-primary
-    hover:border-transparent opacity-85
-    btn
+    rounded-xl responsive-btn  bg-transparent
+    border-2 border-primary-content/10 cursor-pointer
+    transition-opacity hover:opacity-60
+    opacity-85 font-light btn lg:py-7
   `;
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -41,7 +39,7 @@ const ContactMe = () => {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
       id="contact"
-      className={`max-w-7xl mx-auto px-4 py-16 sm:px-8 md:px-12 lg:px-16 pt-20`}
+      className={`max-w-7xl mx-auto px-4 py-16 sm:px-8 md:px-12 lg:px-16`}
     >
       {/* Header Section */}
       <div className="flex flex-col gap-4 text-center mb-16">
@@ -49,7 +47,7 @@ const ContactMe = () => {
           Contact Me
         </h3>
         <p
-          className={`responsive-paragraph opacity-70 text-neutral-400 max-w-2xl mx-auto`}
+          className={`responsive-paragraph opacity-70 text-primary-content/90 max-w-2xl mx-auto`}
         >
           Cultivating Connections: Reach Out and Connect with Me
         </p>
@@ -57,9 +55,9 @@ const ContactMe = () => {
 
       {/* Form Section */}
       <div className="mt-10 max-w-4xl mx-auto">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 lg:gap-8">
           {/* Top Row: Name, Phone, Timeline, Email (using a responsive grid) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-4 lg:gap-8">
             {/* Name */}
             <input
               type="text"
@@ -85,14 +83,16 @@ const ContactMe = () => {
             <select
               onChange={handleStyling}
               defaultValue="Services of interest"
-              className={`${baseInputClasses} text-sm py-3 lg:text-lg text-neutral-500 h-auto appearance-none`}
+              className={`${baseInputClasses} select text-sm py-3 lg:text-lg text-primary-content/30 h-auto appearance-none`}
             >
-              <option disabled={true}>Services of interest</option>
+              <option disabled={true} className="item">
+                Services of interest
+              </option>
               {serviceOfInterest?.map((service) => (
                 <option
                   value={service}
                   key={service}
-                  className=" border-none p-4"
+                  className="border-none p-4"
                 >
                   {service}
                 </option>

@@ -16,12 +16,12 @@ const Services = () => {
   );
 
   return (
-    <Main id="services" className="pb-12 pt-7 z-0">
+    <Main id="services" className="pb-12 pt-12 z-0">
       <div className="flex flex-col gap-6">
         <h3 className="text-center  font-semibold font-heading responsive-heading">
           Services
         </h3>
-        <p className="responsive-paragraph opacity-70 text-center max-w-2xl mx-auto">
+        <p className="responsive-paragraph opacity-70 text-center text-primary-content/90 max-w-2xl mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed incidunt
           dolores veritatis!
         </p>

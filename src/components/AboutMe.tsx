@@ -20,18 +20,14 @@ const AboutMe = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
 
   return (
-    <Main
-      id="about"
-      className={`mx-auto py-16 z-20 pt-20 font-sans`}
-      // className={`mx-auto px-4 py-16 sm:px-8 md:px-12 lg:px-16 pt-20 font-sans`}
-    >
+    <Main id="about" className={`mx-auto py-16 z-20 pt-20 font-sans`}>
       {/* Header Section */}
-      <div className="flex flex-col gap-4 text-center mb-16">
+      <div className="flex flex-col gap-4 text-center">
         <h3 className="responsive-heading font-semibold font-heading">
           About Me
         </h3>
         <p
-          className={`responsive-paragraph opacity-70 text-neutral-400 max-w-7xl mx-auto`}
+          className={`responsive-paragraph opacity-70 text-primary-content/90 max-w-7xl mx-auto`}
         >
           {data?.about.headline}
         </p>
@@ -63,7 +59,7 @@ const AboutMe = () => {
             initial={{ height: 0, opacity: 0 }}
             whileInView={{ height: "auto", opacity: 1 }}
             viewport={{ once: true }}
-            className={`responsive-paragraph px-2 lg:px-0 scale-105 md:scale-100 space-y-6 text-center lg:text-start text-neutral-400 leading-relaxed`}
+            className={`responsive-paragraph px-2 lg:px-0 scale-105 md:scale-100 space-y-6 text-center lg:text-start text-primary-content/85 leading-relaxed`}
           >
             <p>{data?.about.description}</p>
           </motion.div>
@@ -75,7 +71,7 @@ const AboutMe = () => {
                rounded-xl font-bold 
               bg-primary responsive-btn text-md
               flex items-center gap-2 transition-opacity hover:opacity-70
-              shadow-lg shadow-orange-500/30
+              shadow-lg shadow-primary/30
             `}
             >
               <IoMdDownload className="w-5 h-5" />

@@ -80,10 +80,10 @@ const ProjectDetails = ({
                 href={data.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="responsive-btn inline-flex items-center justify-center w-full lg:py-2 sm:w-auto border border-transparent text-base font-medium rounded-lg shadow-md text-white bg-primary hover:bg-primary/75 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                className="responsive-btn inline-flex items-center justify-center w-full lg:py-2 sm:w-auto border border-transparent text-base font-medium rounded-full shadow-md text-white bg-primary hover:bg-primary/75 focus:outline-none focus:ring-2 focus:ring-offset-2"
               >
-                View Live Project / Source
-                <FaLink className="ml-2" size={18} />
+                <FaLink className="mr-2" size={18} />
+                View More
               </a>
             </div>
           </div>

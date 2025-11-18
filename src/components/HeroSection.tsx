@@ -9,14 +9,17 @@ const HeroSection = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
 
   return (
-    <div id="home" className={`w-full relative mt-20`}>
+    <div
+      id="home"
+      className={`w-full min-h-screen flex items-center relative mt-20`}
+    >
       {/* Central Content Wrapper */}
 
       <Main
         className="
         w-full pt-12
         grid grid-cols-1 lg:grid-cols-2 
-        gap-12 lg:gap-20 
+        gap-12 lg:gap-20
         items-center
       "
       >
@@ -24,7 +27,7 @@ const HeroSection = () => {
         <div className="h-full relative grow text-center lg:text-start">
           {/* Div for Only Effect  */}
           <div
-            className={`h-4/5 w-full bg-primary rounded-full opacity-4 blur-3xl fixed -translate-y-23 left-0 -translate-x-1/2`}
+            className={`size-200 bg-primary rounded-full opacity-4 blur-3xl fixed -translate-y-23 left-0 -translate-x-1/2`}
             style={{ zIndex: -1 }}
           ></div>
 
@@ -62,7 +65,7 @@ const HeroSection = () => {
             >
               Hire Me
             </button>
-            <button className="responsive-btn px-8 cursor-pointer rounded-xl font-bold border-2 border-neutral-400 text-neutral-400 transition-opacity hover:opacity-80">
+            <button className="responsive-btn px-8 cursor-pointer rounded-xl font-bold border-2 border-primary-content/10 text-primary-content/60 transition-opacity hover:opacity-80">
               Download CV
             </button>
           </div>

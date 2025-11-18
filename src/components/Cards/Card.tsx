@@ -30,7 +30,7 @@ const Card = ({ title, icon, description }: CardProps) => {
 
         {/* Description */}
         <p
-          className={`responsive-paragraph opacity-70 md:pt-3 text-neutral-500`}
+          className={`responsive-paragraph opacity-70 md:pt-3 text-primary-content/40`}
         >
           {description}
         </p>

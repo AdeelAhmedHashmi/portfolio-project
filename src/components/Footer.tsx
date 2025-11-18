@@ -11,7 +11,7 @@ const Footer = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
 
   return (
-    <Main className="pb-7 py-14 bg-base-300 mt-50 text-neutral-400">
+    <Main className="pb-7 py-14 bg-base-300 mt-50 text-primary-content/60">
       <div className="flex flex-col gap-15">
         {/* logo  */}
         <h3 className="text-4xl font-semibold text-primary text-center font-heading">

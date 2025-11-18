@@ -52,15 +52,15 @@ const ProjectCard: React.FC<CardProps> = ({
       {/* Footer Details */}
       <div
         className="
-        flex px-5 pt-6 border-t border-neutral-800 
-        items-center justify-between text-neutral-500
+        flex px-5 pt-6 border-t border-base-300/10
+        items-center justify-between text-primary-content/40
       "
       >
-        <div className="responsive-projectcard-text font-bold text-neutral-400">
+        <div className="responsive-projectcard-text font-bold text-primary-content/50">
           {projectName}
         </div>
         {category && (
-          <div className="responsive-projectcard-text scale-95 font-bold text-neutral-500">
+          <div className="responsive-projectcard-text scale-95 text-primary-content/60">
             {category}
           </div>
         )}
@@ -106,7 +106,7 @@ const PortfolioSec = () => {
   }
 
   return (
-    <Main id="portfolio" className="z-20 py-12 pt-20">
+    <Main id="portfolio" className="z-20 py-16">
       {/* Project Details Popup */}
       {isPopupOpen && selectedProject && (
         <ProjectDetails
@@ -127,7 +127,7 @@ const PortfolioSec = () => {
             if ((e.target as HTMLElement).tagName !== "BUTTON") return;
             setCategory((e.target as HTMLElement).innerText);
           }}
-          className="flex flex-wrap items-center justify-center gap-4 sm:gap-6"
+          className="flex flex-wrap items-center text-primary-content/70 justify-center gap-4 sm:gap-6"
         >
           <button
             className={`
@@ -179,7 +179,7 @@ const PortfolioSec = () => {
             </div>
           ))
         ) : (
-          <div className="col-span-full text-center text-neutral-500">
+          <div className="col-span-full text-center text-primary-content/40">
             No projects found in this category.
           </div>
         )}
@@ -187,7 +187,7 @@ const PortfolioSec = () => {
 
       {/* Show More/Less Button (only if there are projects) */}
       {itemsForShow.length > 0 && (
-        <div className="text-center text-neutral-500 cursor-pointer grid justify-center">
+        <div className="text-center text-primary-content/50 cursor-pointer grid justify-center">
           <button
             onClick={() => {
               if (canShowMore) {

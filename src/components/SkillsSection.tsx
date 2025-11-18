@@ -14,7 +14,7 @@ const SkillsSection = () => {
     })) || [];
 
   return (
-    <div className={`flex justify-between mx-auto mt-10 py-16 md:px-4 lg:px-8`}>
+    <div className={`flex justify-between mx-auto mt-10 pt-16 md:px-4 lg:px-8`}>
       <SkillsProgress skills={skills} />
     </div>
   );

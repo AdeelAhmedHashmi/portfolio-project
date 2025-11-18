@@ -16,7 +16,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #ff7e338f, #ff7e14);
+  background: linear-gradient(to right, #0b666a, #35a29f);
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -55,7 +55,7 @@
 }
 
 @utility responsive-btn {
-  @apply px-5 py-2 lg:px-6 lg:py-3 lg:text-lg cursor-pointer;
+  @apply px-5 py-2 lg:px-6 lg:py-3 lg:text-lg cursor-pointer text-primary-content;
 }
 
 @utility responsive-progressbar {
@@ -124,6 +124,7 @@
 @theme {
   --font-general: "Inter", sans-serif;
 }
+
 @layer base {
   html {
     height: 100%;
@@ -133,13 +134,16 @@
     min-height: 100%;
     font-family: var(--font-general);
     overflow-x: hidden;
-    background-color: #121212;
     backdrop-filter: blur(120px);
   }
 }
 
 .light-font {
   font-weight: 300;
+}
+
+@plugin "daisyui" {
+  themes: "all";
 }
 
 @plugin "daisyui/theme" {
@@ -153,7 +157,8 @@
   --color-base-300: oklch(20% 0 0); /* Even lighter black */
   --color-base-content: oklch(95% 0.01 0); /* White/light gray text */
 
-  --color-primary: oklch(70% 0.18 45); /* Orange */
+  --color-primary: #35a29f; /* Orange */
+  /* --color-primary: oklch(70% 0.4 45); Orange */
   --color-primary-content: oklch(95% 0.01 0); /* White text on orange */
 
   --color-secondary: oklch(50% 0.05 0); /* Gray */
