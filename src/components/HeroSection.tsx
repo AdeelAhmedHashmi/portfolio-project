@@ -11,7 +11,7 @@ const HeroSection = () => {
   return (
     <div
       id="home"
-      className={`w-full min-h-screen flex items-center relative mt-20`}
+      className={`w-full min-h-screen flex items-center relative pt-20`}
     >
       {/* Central Content Wrapper */}
 

@@ -5,7 +5,7 @@ import { TbBrandLinkedin } from "react-icons/tb";
 const SocialLinks = () => {
   return (
     <div>
-      <div className="flex flex-nowrap translate-x-1 *:border *:backdrop-blur-3xl *:bg-[#00000022] *:border-neutral-700 *:rounded-full *:p-2 *:scale-140 gap-9 ">
+      <div className="flex flex-nowrap translate-x-1 *:border *:backdrop-blur-3xl *:bg-[#00000022] *:border-primary-content/10 *:rounded-full *:p-2 *:scale-140 gap-9 ">
         <div>
           <a href="#" className="size-full flex align-middle justify-center">
             <TbBrandLinkedin className="text-lg opacity-80" />

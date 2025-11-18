@@ -13,9 +13,10 @@ const App = () => {
   const fetchBio = useCallback(async () => {
     try {
       setIsloading(true);
-      const res = await fetch("https://akhlasahmed.online/resumedata");
-      const data = (await res.json()) as BioDataResponse;
-      setBio(data);
+      // const res = await fetch("https://akhlasahmed.online/resumedata");
+      throw new Error();
+      // const data = (await res.json()) as BioDataResponse;
+      // setBio(data);
       setIsloading(false);
     } catch (error) {
       console.error("Failed to fetch bio data, using local data.", error);
