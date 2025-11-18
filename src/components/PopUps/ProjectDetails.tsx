@@ -24,21 +24,20 @@ const ProjectDetails = ({
   close,
   target,
 }: ProjectDetailsProps) => {
-  if (!data) return null;
-  if (!isOpen) return null;
-
   function releaseFreeze() {
     close(false);
     window.document.body.style.overflow = "auto";
     target?.scrollIntoView({ behavior: "instant" });
   }
+  if (!data) return null;
+  if (!isOpen) return null;
   return (
     <div
       onClick={() => releaseFreeze()}
-      className="fixed inset-0 z-60 bg-base-200/10 backdrop-blur-xl flex justify-center items-center p-4"
+      className="fixed inset-0 z-50 max-h-screen bg-base-200/10 backdrop-blur-xl flex justify-center items-center p-4"
     >
       <div
-        className="bg-base-300 rounded-xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-100"
+        className="bg-base-300 rounded-xl shadow-4xl shadow-amber-50 w-full max-w-5xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-100"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Scrollable Content Wrapper */}

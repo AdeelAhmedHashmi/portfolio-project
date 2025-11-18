@@ -5,6 +5,11 @@ import BioDataContext from "../context/bioContext";
 const ContactMe = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
 
+  const handleStyling = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if ((e.target as HTMLSelectElement).value !== "default") {
+      (e.target as HTMLElement).style.color = "white";
+    }
+  };
   const serviceOfInterest = data?.services.map((service) => service.title);
 
   // Standard input/select styles combined with focus states
@@ -78,23 +83,28 @@ const ContactMe = () => {
 
             {/* Services of interest (Select) */}
             <select
+              onChange={handleStyling}
               defaultValue="Services of interest"
-              className={`${baseInputClasses} text-sm lg:text-lg text-neutral-500 h-auto appearance-none`}
+              className={`${baseInputClasses} text-sm py-3 lg:text-lg text-neutral-500 h-auto appearance-none`}
             >
               <option disabled={true}>Services of interest</option>
               {serviceOfInterest?.map((service) => (
-                <option key={service} className=" border-none p-4">
+                <option
+                  value={service}
+                  key={service}
+                  className=" border-none p-4"
+                >
                   {service}
                 </option>
               ))}
             </select>
 
             {/* Timeline */}
-            <input
+            {/* <input
               type="text"
               placeholder="Timeline (e.g., 2-4 weeks)"
-              className={baseInputClasses}
-            />
+              className={baseInputClasses + "w-full"}
+            /> */}
           </div>
 
           {/* Project Details (Textarea, spans full width) */}
@@ -102,14 +112,13 @@ const ContactMe = () => {
             name="message"
             id="message"
             placeholder="Project Details..."
-            // FIX: Replaced custom h-60 and input-xl with standard h-40 and padding
             className={`${baseInputClasses} h-40 resize-none`}
           ></textarea>
 
           {/* Submit Button */}
           <div className="pt-4 flex justify-end">
             <button type="submit" className={buttonClasses + "lg:py-6"}>
-              <div className="size-4 rounded-full border border-b-2 animate-spin"></div>
+              {/* <div className="size-4 rounded-full border border-b-2 animate-spin"></div> */}
               Send Message
             </button>
           </div>

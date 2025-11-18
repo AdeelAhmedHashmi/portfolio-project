@@ -9,7 +9,7 @@ const HeroSection = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
 
   return (
-    <div id="home" className={`w-full relative mt-20 backdrop-blur-3xl`}>
+    <div id="home" className={`w-full relative mt-20`}>
       {/* Central Content Wrapper */}
 
       <Main
