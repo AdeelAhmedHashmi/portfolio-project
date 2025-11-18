@@ -6,7 +6,6 @@ import type { BioDataResponse } from "../type";
 import BioDataContext from "../context/bioContext";
 import { useContext } from "react";
 import Main from "./Wrappers/Main";
-import { PiReadCvLogoBold } from "react-icons/pi";
 
 const Footer = () => {
   const data = useContext<BioDataResponse | null>(BioDataContext);
@@ -29,7 +28,6 @@ const Footer = () => {
         {/* social links  */}
         <div className="flex justify-center">
           <SocialLinks />
-          <PiReadCvLogoBold />
         </div>
 
         {/* contacts  */}
