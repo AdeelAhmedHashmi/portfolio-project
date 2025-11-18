@@ -5,7 +5,6 @@ import AboutMe from "../components/AboutMe";
 import ContactMe from "../components/ContactMe";
 import Footer from "../components/Footer";
 import { Portfolio } from "../components/Portfolio";
-
 export const Route = createFileRoute("/")({
   component: RouteComponent,
 });
