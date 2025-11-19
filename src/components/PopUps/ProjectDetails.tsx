@@ -3,11 +3,8 @@ import { MdClose } from "react-icons/md";
 import type { Project } from "../../type";
 import type React from "react";
 import CardCarousel from "../Cards/CardCarousel";
-import a from "../../assets/projects/a.jpg";
-import b from "../../assets/projects/b.jpg";
-import c from "../../assets/projects/2.png";
-import d from "../../assets/projects/1.png";
 import { motion } from "motion/react";
+import useRandomImg from "../../hooks/useRandomImg";
 
 interface ProjectDetailsProps {
   data: Project | null;
@@ -15,8 +12,6 @@ interface ProjectDetailsProps {
   close: React.Dispatch<React.SetStateAction<boolean>>;
   target: HTMLElement | null;
 }
-
-const MOCK_IMAGES = [a, b, c, d];
 
 const ProjectDetails = ({
   data,
@@ -29,12 +24,13 @@ const ProjectDetails = ({
     window.document.body.style.overflow = "auto";
     target?.scrollIntoView({ behavior: "instant" });
   }
+  const MOCK_IMAGES = useRandomImg();
   if (!data) return null;
   if (!isOpen) return null;
   return (
     <div
       onClick={() => releaseFreeze()}
-      className="fixed inset-0 z-50 max-h-screen bg-base-200/10 backdrop-blur-xl flex justify-center items-center p-4"
+      className="fixed inset-0 z-50 max-h-screen bg-base-200/60 backdrop-blur-2xl flex justify-center items-center p-4"
     >
       <div
         className="bg-base-300 rounded-xl shadow-4xl shadow-amber-50 w-full max-w-5xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-100"
@@ -80,7 +76,7 @@ const ProjectDetails = ({
                 href={data.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="responsive-btn inline-flex items-center justify-center w-full lg:py-2 sm:w-auto border border-transparent text-base font-medium rounded-full shadow-md text-white bg-primary hover:bg-primary/75 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                className="responsive-btn inline-flex items-center justify-center w-full lg:py-2 sm:w-auto border border-transparent font-medium rounded-full shadow-md bg-primary hover:bg-primary/75 focus:outline-none focus:ring-2 focus:ring-offset-2"
               >
                 <FaLink className="mr-2" size={18} />
                 View More

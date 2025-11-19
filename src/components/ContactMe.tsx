@@ -22,9 +22,9 @@ const ContactMe = () => {
   // Adjusted button classes to match the 'btn-outline hover:bg-primary btn-border' style
   const buttonClasses = `
     rounded-xl responsive-btn  bg-transparent
-    border-2 border-primary-content/10 cursor-pointer
+    border-2 border-primary-content/10 text-primary-content/50 cursor-pointer
     transition-opacity hover:opacity-60
-    opacity-85 font-light btn lg:py-7
+    font-light btn lg:py-7
   `;
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {

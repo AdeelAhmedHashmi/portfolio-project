@@ -5,14 +5,9 @@ import type { BioDataResponse, Project } from "../type";
 import CardCarousel from "./Cards/CardCarousel";
 import Main from "./Wrappers/Main";
 import usePagination from "../hooks/usePagination";
-import a from "../assets/projects/0.png";
-import b from "../assets/projects/1.png";
-import c from "../assets/projects/2.png";
-import d from "../assets/projects/3.png";
 import ProjectDetails from "./PopUps/ProjectDetails";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-
-const MOCK_IMAGES = [a, b, c, d];
+import useRandomImg from "../hooks/useRandomImg";
 
 // --- 1. CardCarousel Component (Refined) ---
 
@@ -70,7 +65,6 @@ const ProjectCard: React.FC<CardProps> = ({
 };
 
 // --- 3. Portfolio Component (Refined) ---
-
 const PortfolioSec = () => {
   const [currentCategory, setCurrentCategory] = useState<string>("All");
   const data = useContext<BioDataResponse | null>(BioDataContext);
@@ -83,11 +77,14 @@ const PortfolioSec = () => {
   // Filter projects based on current category
   const filteredProjects = useMemo(() => {
     if (!data) return [];
+
     if (currentCategory === "All") return data.portfolio.projects;
     return data.portfolio.projects.filter(
       (project) => project.category === currentCategory
     );
   }, [data, currentCategory]);
+
+  const MOCK_IMAGES = useRandomImg();
 
   // Apply pagination to filtered projects
   const { itemsForShow, showMore, resetItems, canShowMore } =
@@ -132,8 +129,8 @@ const PortfolioSec = () => {
           <button
             className={`
               rounded-lg font-medium responsive-btn
-              ${currentCategory === "All" ? "bg-primary" : "bg-base-300"} shadow-md transition-colors
-              hover:bg-primary cursor-pointer
+              ${currentCategory === "All" ? "bg-primary text-base-100" : "bg-base-300 text-white"} shadow-md transition-colors
+              hover:bg-primary hover:text-base-100 cursor-pointer
             `}
           >
             All
@@ -144,8 +141,8 @@ const PortfolioSec = () => {
                 <button
                   key={category}
                   className={`
-                  px-7 py-2 lg:py-4 rounded-lg text-base font-medium
-                  ${category === currentCategory ? "bg-primary" : "bg-base-300"} transition-colors
+                  px-7 py-2 lg:py-4 rounded-lg font-medium
+                  ${category === currentCategory ? "bg-primary text-base-100" : "bg-base-300 text-white"} transition-colors
                   hover:bg-primary hover:text-base-100 cursor-pointer
                 `}
                 >
