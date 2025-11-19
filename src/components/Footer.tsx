@@ -20,7 +20,7 @@ const Footer = () => {
 
         {/* navigations  */}
         <div className="flex justify-center">
-          <ul className="flex flex-wrap justify-center cursor-pointer text-xl font-semibold gap-15">
+          <ul className="flex flex-wrap justify-center cursor-pointer text-xl font-semibold gap-4 md:gap-9 lg:gap-15">
             <Navigation />
           </ul>
         </div>
@@ -33,14 +33,12 @@ const Footer = () => {
         {/* contacts  */}
         <div className="flex flex-wrap justify-center gap-y-4 gap-x-10">
           <div className="flex gap-4 align-middle justify-center">
-            <HiOutlineMail className="text-3xl" />
-            <span className="font-semibold text-lg lg:text-xl">
-              {data?.contactInfo.email}
-            </span>
+            <HiOutlineMail className="text-2xl" />
+            <span className="text-lg">{data?.contactInfo.email}</span>
           </div>
           <div className="flex gap-4 align-middle justify-center">
-            <MdOutlineLocalPhone className="text-3xl" />
-            <span className="font-semibold text-lg text-nowrap lg:text-xl">
+            <MdOutlineLocalPhone className="text-2xl" />
+            <span className="text-lg text-nowrap">
               {data?.contactInfo.phone}
             </span>
           </div>

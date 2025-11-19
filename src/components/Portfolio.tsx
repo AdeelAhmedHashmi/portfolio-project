@@ -146,7 +146,7 @@ const PortfolioSec = () => {
                   className={`
                   px-7 py-2 lg:py-4 rounded-lg text-base font-medium
                   ${category === currentCategory ? "bg-primary" : "bg-base-300"} transition-colors
-                  hover:bg-primary cursor-pointer
+                  hover:bg-primary hover:text-base-100 cursor-pointer
                 `}
                 >
                   {category}

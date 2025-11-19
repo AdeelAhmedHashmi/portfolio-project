@@ -16,7 +16,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #0b656ac1, #35a29f);
+  background: linear-gradient(to right, #0065b3, #04ccfe);
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -55,7 +55,7 @@
 }
 
 @utility responsive-btn {
-  @apply px-5 py-2 lg:px-6 lg:py-3 lg:text-lg cursor-pointer text-primary-content;
+  @apply px-5 py-2 lg:px-6 lg:py-3 lg:text-lg cursor-pointer text-base-100;
 }
 
 @utility responsive-progressbar {
@@ -135,6 +135,8 @@
     font-family: var(--font-general);
     overflow-x: hidden;
     backdrop-filter: blur(120px);
+    /* background-color: #0065b3; */
+    /* background-color: #04ccfe; */
   }
 }
 
@@ -157,8 +159,8 @@
   --color-base-300: oklch(20% 0 0); /* Even lighter black */
   --color-base-content: oklch(95% 0.01 0); /* White/light gray text */
 
-  --color-primary: #35a29f; /* Orange */
-  /* --color-primary: oklch(70% 0.4 45); Orange */
+  --color-primary: #04ccfe;
+  /* --color-primary: #35a29f; */
   --color-primary-content: oklch(95% 0.01 0); /* White text on orange */
 
   --color-secondary: oklch(50% 0.05 0); /* Gray */

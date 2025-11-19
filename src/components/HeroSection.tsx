@@ -80,7 +80,7 @@ const HeroSection = () => {
             >
               <div className="flex flex-col items-center gap-1 p-2 responsive-experience-box">
                 <h4 className={`text-primary`}>
-                  {data?.personalInfo.experience}
+                  {data?.personalInfo.experience.slice(0, 2)}
                 </h4>
                 <p className="font-normal">Experience</p>
               </div>
